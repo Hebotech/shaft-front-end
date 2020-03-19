@@ -1,0 +1,27 @@
+{
+  "name": "shaft",
+  "version": "1.0.0",
+  "description": "This is the first version of the landing page ",
+  "main": "index.js",
+  "scripts": {
+    "test": "dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hebotech/shaft-front-end.git"
+  },
+  "keywords": [
+    "shaft",
+    "cascos",
+    "para",
+    "moto",
+    "vue",
+    "nuxt"
+  ],
+  "author": "IrfDev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Hebotech/shaft-front-end/issues"
+  },
+  "homepage": "https://github.com/Hebotech/shaft-front-end#readme"
+}
