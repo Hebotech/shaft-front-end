@@ -3,7 +3,9 @@
    <nav-bar/>
    <hero-header/>
    <product-experience/>
-   <business-map/>
+   <business-map
+    :apiKey='AIzaSyC7XGjvP6DWzLIpV1AkMnN6irKS1xmkb-U'
+   />
    <contact-form/>
   </div>
 </template>
