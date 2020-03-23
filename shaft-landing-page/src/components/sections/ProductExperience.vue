@@ -1,5 +1,8 @@
 <template>
 <div class="container-fluid">
+  <h1>
+    Cascos para moto
+  </h1>
   <product-titles class="pt"/>
   <product-circle/>
   <product-description/>

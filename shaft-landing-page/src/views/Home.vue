@@ -3,10 +3,18 @@
    <nav-bar/>
    <hero-header/>
    <product-experience/>
-   <business-map
-    :apiKey='AIzaSyC7XGjvP6DWzLIpV1AkMnN6irKS1xmkb-U'
-   />
    <contact-form/>
+   <div class="row">
+     <div
+      class="col-md-4"
+      v-for="(company,companyIndex) in companies"
+      :key="companyIndex"
+     >
+      <websites
+        :company="company"
+      />
+     </div>
+   </div>
   </div>
 </template>
 
@@ -14,8 +22,8 @@
 import NavBar from '@/components/ui/NavBar.vue';
 import HeroHeader from '@/components/sections/HeroHeader.vue';
 import ProductExperience from '@/components/sections/ProductExperience.vue';
-import businessMap from '@/components/sections/map/map.vue';
 import ContactForm from '@/components/sections/Form.vue';
+import websites from '@/components/sections/companies/websites.vue';
 
 export default {
   name: 'Home',
@@ -23,8 +31,16 @@ export default {
     NavBar,
     HeroHeader,
     ProductExperience,
-    businessMap,
     ContactForm,
+    websites,
+  },
+  mounted() {
+    this.$store.dispatch('fetchCompanies');
+  },
+  computed: {
+    companies() {
+      return this.$store.state.allCompanies;
+    },
   },
 };
 </script>
