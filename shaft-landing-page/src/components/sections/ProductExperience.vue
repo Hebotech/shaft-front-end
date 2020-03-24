@@ -3,9 +3,11 @@
   <h1>
     Cascos para moto
   </h1>
-  <product-titles class="pt"/>
-  <product-circle/>
-  <product-description/>
+  <div class="productSection">
+    <product-titles class="pt"/>
+    <product-circle/>
+    <product-description/>
+  </div>
 </div>
 </template>
 
@@ -27,5 +29,14 @@ export default {
 <style lang='scss' scoped>
 .container-fluid{
   background-color:$background-light!important;
+}
+.pt{
+    display: flex;
+    position:relative;
+    right: 0%!important;
+    left: 4%;
+}
+.productSection{
+    display: flex;
 }
 </style>

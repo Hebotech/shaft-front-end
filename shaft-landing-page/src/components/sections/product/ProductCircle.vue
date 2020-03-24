@@ -1,9 +1,11 @@
 <template>
-<div>
   <div class="bg-circle">
-    <img src="" class="img-fluid" alt="">
+    <img
+      src="@/assets/ActiveHelmet.png"
+      class="img-fluid active-product"
+      alt=""
+    >
   </div>
-</div>
 </template>
 
 <script>
@@ -12,6 +14,11 @@ export default {
 };
 </script>
 
-<style>
-
+<style lang='scss' scoped>
+.active-product{
+}
+.bg-circle{
+    border:1px solid black;
+    border-radius: 50%;
+}
 </style>
