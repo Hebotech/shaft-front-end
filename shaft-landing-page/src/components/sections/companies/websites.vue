@@ -17,7 +17,7 @@
           :href="`http://${company.properties.website.value}`"
           class="btn border-0 animated fadeInDown slower "
           target="_blank"
-          @click.prevent='addNewClick(company.companyId)'
+          @click='addNewClick(company.companyId)'
         >
           Ver sitio web
         </a>

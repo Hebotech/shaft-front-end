@@ -1,9 +1,9 @@
 <template>
-<div class="container-fluid">
+<div class="container-fluid mb-3">
   <h1>
     Cascos para moto
   </h1>
-  <div class="productSection">
+  <div class="productSection row">
     <product-titles class="pt"/>
     <product-circle/>
     <product-description/>
@@ -31,10 +31,10 @@ export default {
   background-color:$background-light!important;
 }
 .pt{
-    display: flex;
-    position:relative;
-    right: 0%!important;
-    left: 4%;
+    // display: flex;
+    // position:relative;
+    // right: 0%!important;
+    // left: 4%;
 }
 .productSection{
     display: flex;

@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="description col-md-3">
   <p>
     Éste modelo es uno de los
     modelos fundamentales para
@@ -7,6 +7,7 @@
     y como es que se utilizan cascos´
     como estos
   </p>
+
 </div>
 </template>
 
@@ -17,5 +18,9 @@ export default {
 </script>
 
 <style lang='scss' scoped>
-
+.description{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 </style>
