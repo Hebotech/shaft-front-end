@@ -92,7 +92,7 @@ export default {
       .circle{
         position: absolute;
         top:6%;
-        left:10%;
+        left:11%;
         box-shadow: 3px 3px 9px #0000002b;
         width: 550px;
         height: 550px;
@@ -101,7 +101,7 @@ export default {
         overflow:visible;
       }
       img{
-        width:100%;
+        width:95%;
       }
     }
     .products-around{

@@ -1,10 +1,6 @@
 <template>
 <div class="container-fluid">
-<h1>
-    Donde comprar
-</h1>
-<baidu-map class="map" :center="{lng: 116.404, lat: 39.915}" :zoom="15">
-</baidu-map>
+  <img src="@/assets/dondecomprar.png" alt="" class="img-fluid">
 </div>
 </template>
 

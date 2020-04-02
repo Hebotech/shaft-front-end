@@ -1,5 +1,5 @@
 <template>
-<div class="container-fluid mb-3">
+<div class="container-fluid">
   <h1>
     Cascos para moto
   </h1>
@@ -29,6 +29,7 @@ export default {
 <style lang='scss' scoped>
 .container-fluid{
   background-color:$background-light!important;
+  height:100vh!important;
 }
 .pt{
     // display: flex;
@@ -37,6 +38,8 @@ export default {
     // left: 4%;
 }
 .productSection{
-    display: flex;
+  display: flex;
+  z-index: 3;
+  position: relative;
 }
 </style>
