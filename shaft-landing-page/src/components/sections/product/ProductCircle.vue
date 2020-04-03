@@ -5,83 +5,101 @@
     mb-3
     d-flex
     justify-content-center
-    items-center"
+    items-center
+  "
+    @keyup.up="nextProduct"
+    @keyup.down="lastProduct"
   >
     <div class="main-product">
       <div class="circle"/>
       <img
-        src="@/assets/ActiveHelmet.png"
-        class="img-fluid active-product animated slideInDown slower mr-3"
+        :src="activeProduct.images[counter]"
+        class="
+          img-fluid
+          active-product
+          animated
+          slideInDown
+          slower
+          mr-3
+        "
         alt=""
       >
     </div>
     <div class="products-around">
-      <div class="active-producto"/>
-      <div class="non-active-container d-flex h-100 flex-column justify-content-around">
-        <div class="non-active-top h-25 justify-content-around d-flex flex-column">
-          <div class="non-active-products animated FadeInUp"/>
-          <div class="non-active-products animated FadeInUp"/>
-        </div>
-        <div class="non-active-bottom h-25 justify-content-around d-flex flex-column">
-          <div class="non-active-products animated FadeInDown"/>
-          <div class="non-active-products animated FadeInDown"/>
-        </div>
-      </div>
+      <div
+        class="active-producto"
+        :style="`background-image:url(${activeProduct.images[0]})`"
+      />
+      <non-active-products/>
     </div>
   </div>
 </template>
 
 <script>
+import nonActiveProducts from './NonActiveProducts.vue';
+
 export default {
   name: 'ProductCircle',
+  components: {
+    nonActiveProducts,
+  },
+  computed: {
+    activeProduct() {
+      return this.$store.getters.activeProduct;
+    },
+  },
+  data() {
+    return {
+      counter: 0,
+    };
+  },
+  methods: {
+    nextProduct() {
+      this.counter = 0;
+      this.$store.dispatch('nextProduct');
+    },
+    lastProduct() {
+      this.counter = 0;
+      this.$store.dispatch('lastProduct');
+    },
+    nextImage() {
+      if (this.counter <= this.activeProduct.images.length - 2) {
+        this.counter += 1;
+      } else {
+        this.counter = 0;
+      }
+    },
+    lastImage() {
+      if (this.counter >= this.activeProduct.images.length - 1) {
+        this.counter -= 1;
+      } else {
+        this.counter = this.activeProduct.images.length - 1;
+      }
+    },
+  },
+  mounted() {
+    window.addEventListener('keyup', (event) => {
+      switch (event.keyCode) {
+        case 37:
+          this.lastImage();
+          break;
+        case 38:
+          this.nextProduct();
+          break;
+        case 39:
+          this.nextImage();
+          break;
+        case 40:
+          this.lastProduct();
+          break;
+        // no default
+      }
+    });
+  },
 };
 </script>
 
 <style lang='scss' scoped>
-.non-active-container{
-  position:absolute;
-  top:-3%;
-  left: -4%;
-  .non-active-products::before{
-      content: "";
-        background-color: rgb(205, 205, 205);
-        width:16px;
-        height:16px;
-        position:absolute;
-        border-radius:50%;
-        left:105%;
-        top:25%;
-    }
-  .non-active-products{
-    background:url('http://localhost:8081/img/ActiveHelmet.a29584c2.png');
-    background-size: cover;
-    width: 40px;
-    height: 40px;
-  }
-  .non-active-top{
-      position: relative;
-      :nth-of-type(1){
-        position: relative;
-        right: -190%;
-      }
-      :nth-of-type(2){
-        position: relative;
-        left: 30%;
-      }
-  }
-  .non-active-bottom{
-      position: relative;
-      right: 10%;
-      :nth-of-type(2){
-        position: relative;
-        left: 100%;
-      }
-      :nth-of-type(1){
-        position: relative;
-        left: -10%;
-      }
-  }
-}
 .bg-circle{
     border:1px solid #B5B5B5;
     border-radius: 50%;
@@ -106,7 +124,7 @@ export default {
     }
     .products-around{
       .active-producto{
-          background:url('http://localhost:8081/img/ActiveHelmet.a29584c2.png');
+          // background:url('http://localhost:8081/img/ActiveHelmet.a29584c2.png');
           background-size: cover;
           position:absolute;
           top:40%;

@@ -1,6 +1,6 @@
 <template>
  <div
-      class="col-md-3 col-sm-6"
+      class="col-md-4 col-sm-6"
      >
   <div class='company'>
     <div class="card mb-3 border-0 animated zoomIn faster">
@@ -48,6 +48,10 @@ export default {
 </script>
 
 <style lang='scss' scoped>
+.company{
+  position:relative;
+  z-index: 2;
+}
 .btn{
   background-color:$alpha;
   color:$title-dark;

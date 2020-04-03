@@ -1,7 +1,9 @@
 <template>
-<div class="container-fluid">
+<div
+  class="container-fluid"
+>
   <h1>
-    Cascos para moto
+    {{activeProduct.name}}
   </h1>
   <div class="productSection row">
     <product-titles class="pt"/>
@@ -23,6 +25,14 @@ export default {
     ProductTitles,
     ProductDescription,
   },
+  computed: {
+    nonActiveProducts() {
+      return this.$store.getters.nonActiveProducts;
+    },
+    activeProduct() {
+      return this.$store.getters.activeProduct;
+    },
+  },
 };
 </script>
 
@@ -30,12 +40,6 @@ export default {
 .container-fluid{
   background-color:$background-light!important;
   height:100vh!important;
-}
-.pt{
-    // display: flex;
-    // position:relative;
-    // right: 0%!important;
-    // left: 4%;
 }
 .productSection{
   display: flex;

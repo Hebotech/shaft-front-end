@@ -1,11 +1,7 @@
 <template>
 <div class="description col-md-3">
   <p>
-    Éste modelo es uno de los
-    modelos fundamentales para
-    los amantes de los videojuegos
-    y como es que se utilizan cascos´
-    como estos
+    {{activeProduct.description}}
   </p>
 
 </div>
@@ -14,6 +10,11 @@
 <script>
 export default {
   name: 'ProductDescription',
+  computed: {
+    activeProduct() {
+      return this.$store.getters.activeProduct;
+    },
+  },
 };
 </script>
 

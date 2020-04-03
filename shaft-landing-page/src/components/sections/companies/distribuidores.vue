@@ -32,11 +32,12 @@ export default {
 
 <style lang='scss' scoped>
 .distribuidores{
-  z-index:3;
+  // z-index:;
+  // position:relative;
   background-color:#F7F7F7;
   img{
     position:relative;
-  z-index:1;
+  z-index:3;
   }
 }
 </style>

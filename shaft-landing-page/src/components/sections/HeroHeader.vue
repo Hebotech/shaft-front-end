@@ -1,28 +1,30 @@
 <template>
-<div class="container-fluid">
+<div
+  class="container-fluid"
+  :style="{'background-image': 'url('+require('@/assets/bg-hero-header.svg')+')'}"
+>
   <div
     class="
       d-flex
       flex-column
+      align-items-center
       justify-content-center
-      items-center
     "
   >
       <img
         src="@/assets/header-title.png"
         alt=""
-        class="w-50 img-fluid pt"
+        class="w-50 img-fluid"
       />
       <img
         src="@/assets/brand/logo.png"
         alt=""
         width="500px"
-        class="img-fluid text-center pt logo"
+        class="img-fluid text-center mt-3 logo"
       >
       <div class="bg-bottom">
         <img
           src="@/assets/header-bottom.png"
-          alt=""
           class="img-fluid"
         >
       </div>
@@ -51,9 +53,9 @@ export default {
 .container-fluid{
   background-color: $beta;
   overflow: hidden;
-  height: 200vh;
+  height: 100vh;
   // position: sticky;
-  background-image: url('http://localhost:8081/img/bg-hero-header.2974f635.svg');
+  // background-image: url('../../../bg-hero-header.svg');
   background-size:contain;
   background-attachment: fixed;
 }
@@ -65,10 +67,16 @@ export default {
 //   left:0;
 //
 .bg-bottom{
-  position: sticky;
-  // top: 0px;
-  bottom:0px;
+  position:absolute;
+  // position: sticky;
+  min-width: 100%;
+  // top: -400%;
+  left:0;
+  bottom:0%;
   // position: -webkit-sticky;
+}
+.d-flex:first-child{
+  padding-top:5%;
 }
 
 </style>

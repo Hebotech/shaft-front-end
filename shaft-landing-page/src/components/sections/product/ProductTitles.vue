@@ -1,14 +1,22 @@
 <template>
 <div class="col-md-3 d-flex flex-column justify-content-around">
-    <img src="@/assets/certificates/2.png" class="img-fluid" srcset="">
-    <img src="@/assets/certificates/1.png" class="img-fluid" srcset="">
-    <img src="@/assets/certificates/3.png" class="img-fluid" srcset="">
+  <img
+    v-for="(certificate, certificateIndex) in activeProduct.certificates"
+    :key="certificateIndex"
+    :src="certificate"
+    class="img-fluid"
+  >
 </div>
 </template>
 
 <script>
 export default {
   name: 'ProductTitles',
+  computed: {
+    activeProduct() {
+      return this.$store.getters.activeProduct;
+    },
+  },
 };
 </script>
 
