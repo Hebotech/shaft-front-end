@@ -1,5 +1,13 @@
 <template>
-<div class="description col-md-3">
+<div class="
+  description
+  order-3
+  order-sm-3
+  order-md-3
+  col-md-3
+  col-sm-12
+  "
+>
   <p>
     {{activeProduct.description}}
   </p>

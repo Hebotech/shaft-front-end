@@ -2,10 +2,16 @@
 <div class="
   bg-circle
   col-md-6
+  col-sm-10
+  col-10
   mb-3
   d-flex
   justify-content-center
   items-center
+  order-1
+  order-sm-1
+  order-md-2
+  order-xl-2
 "
   @keyup.up="nextProduct"
   @keyup.down="lastProduct"
@@ -24,6 +30,7 @@
 </template>
 
 <script>
+import { VueHammer } from '@vue2-hammer';
 import nonActiveProducts from './NonActiveProducts.vue';
 import MainProduct from './MainProduct.vue';
 
@@ -90,32 +97,17 @@ export default {
 </script>
 
 <style lang='scss' scoped>
+@media (max-width: 768px) {
+  .bg-circle{
+    margin:0% 10%;
+    padding:0% 1%!important;
+    border: none!important;
+  }
+}
 .bg-circle{
     border:1px solid #B5B5B5;
     border-radius: 50%;
-    height: 650px;
     align-items: center;
-    // .products-around{
-    //   .active-producto{
-    //       // background:url('http://localhost:8081/img/ActiveHelmet.a29584c2.png');
-    //       background-size: cover;
-    //       position:absolute;
-    //       top:40%;
-    //       filter:drop-shadow(14px 5px 7px rgba(222, 255, 0, 0.3));
-    //       right:101%;
-    //       width: 100px;
-    //       height: 100px;
-    //   }
-    //   .active-producto::before{
-    //     content: "";
-    //     background-color: black;
-    //     width:20px;
-    //     height:20px;
-    //     position:absolute;
-    //     border-radius:50%;
-    //     left:100%;
-    //     top:30%;
-    //   }
-    // }
+    padding:0%;
 }
 </style>

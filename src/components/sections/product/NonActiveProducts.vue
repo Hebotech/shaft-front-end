@@ -5,11 +5,12 @@
         d-flex
         h-100
         flex-column
-        justify-content-around
+        justify-content-center
+        justify-content-md-around
     "
     >
     <div
-      class="non-active-top h-25 justify-content-around d-flex flex-column"
+      class="non-active-top justify-content-center justify-content-md-around d-flex flex-column"
     >
         <div
           class="non-active-products animated FadeInUp"
@@ -31,7 +32,7 @@
       @click="setActiveProduct(2)"
     />
     <div
-      class="non-active-bottom h-25 justify-content-around d-flex flex-column"
+      class="non-active-bottom justify-content-around d-flex flex-column"
     >
         <div
           class="non-active-products animated FadeInUp"
@@ -67,71 +68,91 @@ export default {
 </script>
 
 <style lang='scss' scoped>
+@media (max-width: 768px) {
+  .activing{
+    left: 0%!important;
+    width: 80px!important;
+    height: 80px!important;
+    }
+    ::before{
+      content: "";
+        height:0px!important;
+    }
+    .non-active-bottom, .non-active-top{
+      position:unset!important;
+    }
+  .non-active-container{
+    top:0%!important;
+    left: -10%!important;
+  .non-active-products{
+    position: static!important;
+    width: 40px!important;
+    height: 40px!important;
+    margin-bottom: 1em;
+  }
+}
+}
 .center{
 position: relative;
-right: 55%;
+right: 65%;
 }
-.center::before{
-      content: "";
-        background-color: rgb(205, 205, 205);
-        width:16px;
-        height:16px;
-        position: absolute!important;
-        border-radius:50%;
-        left:135%!important;
-        top:49%!important;
-    }
 .activing{
   filter:drop-shadow(14px 5px 7px rgba(222, 255, 0, 0.3))!important;
-  width: 80px!important;
-  height: 80px!important;
+  width: 120px!important;
+  height: 120px!important;
   transition:cubic-bezier(0.075, 0.82, 0.165, 1) .3s;
-  right:100%;
+  left:-10%!important;
+}
+.center.activing{
+  left:-71%!important;
 }
 .activing::before{
   background-color: black!important;
+  content: "";
+  width:16px;
+  height:16px;
+  position: absolute;
+  border-radius:50%;
+  left:40%;
+  top:90%;
 }
 .non-active-container{
   position:absolute;
-  top:-3%;
+  bottom:13%;
   left: -4%;
-  .non-active-products::before{
-      content: "";
-        background-color: rgb(205, 205, 205);
-        width:16px;
-        height:16px;
-        position:absolute;
-        border-radius:50%;
-        left:105%;
-        top:25%;
-    }
+
   .non-active-products{
     transition:cubic-bezier(0.075, 0.82, 0.165, 1) .3s;
     background-size: cover;
-    width: 40px;
-    height: 40px;
+    width: 80px;
+    height: 80px;
   }
   .non-active-top{
       position: relative;
+      right: -10%;
       :nth-of-type(1){
         position: relative;
-        right: -190%;
+        left: 110%;
+        top: 17%;
       }
       :nth-of-type(2){
         position: relative;
-        left: 30%;
+        left: 16%;
+        top:20%;
       }
   }
   .non-active-bottom{
       position: relative;
-      right: 10%;
+      right: 15%;
       :nth-of-type(2){
         position: relative;
-        left: 100%;
+        left: 10%;
+        top:10%;
       }
       :nth-of-type(1){
         position: relative;
-        left: -10%;
+        right: 50%;
+        bottom: 13%;
       }
   }
 }

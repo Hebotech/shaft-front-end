@@ -28,11 +28,6 @@
           class="img-fluid"
         >
       </div>
-      <!-- <img
-        src="@/assets/bg-hero-header.svg"
-        alt=""
-        class="img-fluid bg-pattern"
-      > -->
   </div>
 </div>
 </template>
@@ -54,29 +49,25 @@ export default {
   background-color: $beta;
   overflow: hidden;
   height: 100vh;
-  // position: sticky;
-  // background-image: url('../../../bg-hero-header.svg');
   background-size:contain;
   background-attachment: fixed;
 }
-// .bg-pattern
-//   position: fixed;
-//   z-index: 0;
-//   top:0;
-//   overflow: hidden;
-//   left:0;
-//
 .bg-bottom{
   position:absolute;
-  // position: sticky;
   min-width: 100%;
-  // top: -400%;
   left:0;
   bottom:0%;
-  // position: -webkit-sticky;
 }
 .d-flex:first-child{
   padding-top:5%;
 }
-
+@media  (max-width: 1100px) {
+  .d-flex img:nth-of-type(1){
+    min-width:100%!important;
+    padding-top:35%;
+  }
+  .bg-bottom img{
+    height:800px;
+  }
+ }
 </style>

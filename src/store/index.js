@@ -114,10 +114,10 @@ export default new Vuex.Store({
       state.products.forEach(product=>{
           product.active=false;
       })
-   },
-   SELECT_ACTIVE_PRODUCT(state ,index) {
-    state.products[index].active=true
-   }
+    },
+    SELECT_ACTIVE_PRODUCT(state ,index) {
+      state.products[index].active=true
+    }
   },
   actions: {
     async fetchCompanies({commit,state}){
