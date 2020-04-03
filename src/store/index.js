@@ -32,10 +32,13 @@ export default new Vuex.Store({
         description:'Ésta es la súper descripción del producto 2',
         active:false,
         model:'SH-520',
-        certificates:[],
+        certificates:[
+          '../certificates/3.png',
+          '../certificates/2.png',
+          '../certificates/1.png',
+        ],
         images:[
           '../products/2/1.png',
-          '../products/2/2.png',
         ],
         index:1
       },
@@ -44,7 +47,11 @@ export default new Vuex.Store({
         description:'Ésta es la súper descripción del producto 3',
         active:false,
         model:'SH-520',
-        certificates:[],
+        certificates:[
+          '../certificates/3.png',
+          '../certificates/1.png',
+          '../certificates/2.png',
+        ],
         images:[
           '../products/3/1.png',
           '../products/3/2.png',
@@ -56,7 +63,11 @@ export default new Vuex.Store({
         description:'Ésta es la súper descripción del producto 4',
         active:false,
         model:'SH-520',
-        certificates:[],
+        certificates:[
+          '../certificates/3.png',
+          '../certificates/1.png',
+          '../certificates/2.png',
+        ],
         images:[
           '../products/4/1.png',
           '../products/4/2.png',
@@ -68,7 +79,11 @@ export default new Vuex.Store({
         description:'Ésta es la súper descripción del 5',
         active:false,
         model:'SH-520',
-        certificates:[],
+        certificates:[
+          '../certificates/1.png',
+          '../certificates/2.png',
+          '../certificates/3.png',
+        ],
         images:[
           '../products/5/1.png',
           '../products/5/2.png',
@@ -100,6 +115,9 @@ export default new Vuex.Store({
           product.active=false;
       })
    },
+   SELECT_ACTIVE_PRODUCT(state ,index) {
+    state.products[index].active=true
+   }
   },
   actions: {
     async fetchCompanies({commit,state}){

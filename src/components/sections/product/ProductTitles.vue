@@ -1,5 +1,5 @@
 <template>
-<div class="col-md-3 d-flex flex-column justify-content-around">
+<div class="col-md-3 col-sm-12 d-flex flex-column justify-content-around">
   <img
     v-for="(certificate, certificateIndex) in activeProduct.certificates"
     :key="certificateIndex"
