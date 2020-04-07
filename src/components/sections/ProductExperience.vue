@@ -1,6 +1,10 @@
 <template>
 <div
-  class="container-fluid"
+  class="
+  d-flex
+  flex-column
+  justify-content-around
+  container-fluid"
 >
   <h1>
     {{activeProduct.name}}
@@ -37,9 +41,22 @@ export default {
 </script>
 
 <style lang='scss' scoped>
+h1{
+  @extend .title;
+  font-size:5em;
+}
+@media (max-width: 768px) {
+  .container-fluid{
+  background-color:$background-light!important;
+  height:auto!important;
+  h1{
+    font-size: 3em;
+  }
+}
+}
 .container-fluid{
   background-color:$background-light!important;
-  height:100vh!important;
+  height:100vh;
 }
 .productSection{
   display: flex;

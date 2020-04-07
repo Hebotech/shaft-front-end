@@ -5,6 +5,7 @@
   col-sm-10
   col-10
   mb-3
+  mt-3
   d-flex
   justify-content-center
   items-center
@@ -30,7 +31,6 @@
 </template>
 
 <script>
-import { VueHammer } from '@vue2-hammer';
 import nonActiveProducts from './NonActiveProducts.vue';
 import MainProduct from './MainProduct.vue';
 

@@ -94,7 +94,8 @@ export default {
 }
 .center{
 position: relative;
-right: 65%;
+right: 30%;
+top:1.5%;
 }
 .activing{
   filter:drop-shadow(14px 5px 7px rgba(222, 255, 0, 0.3))!important;
@@ -126,6 +127,7 @@ right: 65%;
     background-size: cover;
     width: 80px;
     height: 80px;
+    z-index: 0;
   }
   .non-active-top{
       position: relative;
@@ -138,21 +140,27 @@ right: 65%;
       :nth-of-type(2){
         position: relative;
         left: 16%;
-        top:20%;
+        top:15%;
+      }
+      :nth-of-type(1).activing{
+        left: 50%!important;
       }
   }
   .non-active-bottom{
       position: relative;
-      right: 15%;
+      right: 0%;
       :nth-of-type(2){
         position: relative;
-        left: 10%;
-        top:10%;
+        left: 12%;
+        top:15%;
       }
       :nth-of-type(1){
         position: relative;
-        right: 50%;
-        bottom: 13%;
+        right: 40%;
+        top: 8%;
+      }
+      :nth-of-type(1).activing{
+        left: -70%!important;
       }
   }
 }

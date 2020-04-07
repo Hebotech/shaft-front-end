@@ -5,6 +5,10 @@
 </template>
 
 <style lang="scss">
+@font-face {
+    font-family: 'shaft-h1';
+    src: url("~@/styles/lhfasylum-webfont.woff") format('woff');
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

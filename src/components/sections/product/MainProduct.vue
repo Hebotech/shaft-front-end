@@ -61,8 +61,8 @@ export default {
     align-content:center;
       .circle{
         position: absolute;
-        top:6%;
-        left:11%;
+        top:2%;
+        left:10%;
         box-shadow: 3px 3px 9px #0000002b;
         // width: 550px;
         padding:40%;
@@ -72,7 +72,7 @@ export default {
         overflow:visible;
       }
       img{
-        width:90%;
+        width:85%;
       }
     }
 </style>

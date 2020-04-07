@@ -1,6 +1,6 @@
 <template>
  <div
-      class="col-md-4 col-sm-6"
+      class="col-md-4 col-sm-6 col-12"
      >
   <div class='company'>
     <div class="card mb-3 border-0 animated zoomIn faster">
@@ -69,22 +69,22 @@ export default {
     box-shadow: 5px 5px 10px #00000038;
     border:0px;
     margin-bottom:3em;
-  transition: cubic-bezier(0.075, 0.82, 0.165, 1) 1.2s;
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1) .5s;
   h5{
       border-radius:0px;
-      transition:cubic-bezier(0.175, 0.885, 0.32, 1.275) .9s;
+      transition:cubic-bezier(0.175, 0.885, 0.32, 1.275) .3s;
     }
 }
 .card:hover{
     box-shadow: 5px 5px 15px $alpha;
     border:0px;
     margin-bottom:3em;
-    transition: cubic-bezier(0.075, 0.82, 0.165, 1) .5s;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) .2s;
     h5{
       background-color:$alpha;
       padding: 2%;
       border-radius:8px;
-      transition:cubic-bezier(0,.92,.78,.63) .4s;
+      transition:cubic-bezier(0,.92,.78,.63) .2s;
       @extend .animated !optional;
       @extend .rubberBand !optional;
     }

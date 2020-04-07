@@ -31,6 +31,18 @@ export default {
 </script>
 
 <style lang='scss' scoped>
+@media (max-width: 768px) {
+  .container-fluid{
+  background-color:$background-light!important;
+  height:auto!important;
+  h1{
+    font-size: 3em;
+  }
+  img{
+    width:25%;
+  }
+}
+}
 img{
   width:35%;
 }

@@ -1,5 +1,5 @@
 <template>
-  <div class="distribuidores">
+  <div class="distribuidores pt-3 pt-md-0 ">
   <img src="@/assets/DONDECOMPRAR.png" alt="" class="w-75 img-fluid mb-3 animated fadeInDown">
     <div class="row m-0">
         <websites

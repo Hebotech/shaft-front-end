@@ -67,7 +67,7 @@ export default {
     padding-top:35%;
   }
   .bg-bottom img{
-    height:800px;
+    height:500px;
   }
  }
 </style>
