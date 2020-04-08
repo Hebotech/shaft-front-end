@@ -43,7 +43,8 @@ export default {
 <style lang='scss' scoped>
 h1{
   @extend .title;
-  font-size:5em;
+  font-size:6em;
+  color:#333333;
 }
 @media (max-width: 768px) {
   .container-fluid{

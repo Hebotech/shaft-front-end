@@ -1,7 +1,7 @@
 <template>
   <div class="pattern-wrapper">
     <img
-      src="@/assets/pattern.svg"
+      src="@/assets/pattern.png"
       alt=""
       class="pattern img-fluid w-100"
       :style="{'mask-image': 'url('+require('@/assets/splash.svg')+')'}"
@@ -22,7 +22,7 @@ export default {
   // z-index:-1;
   top: 150%;
   position: absolute;
-  left: -90%;
+  left: -80%;
 }
 .pattern{
   z-index: 0;
@@ -30,7 +30,7 @@ export default {
   top:0;
   // mask:url(http://localhost:8081/img/splash.aef018d5.svg);
   mask-position: left;
-  mask-size:contain;
-  background-color:$beta;
+  mask-size:cover;
+  background-color:$alpha100;
 }
 </style>

@@ -9,20 +9,14 @@
 </template>
 
 <script>
-import HeroHeader from '@/components/sections/HeroHeader.vue';
-import ProductExperience from '@/components/sections/ProductExperience.vue';
-import ContactForm from '@/components/sections/Form.vue';
-import Distribuidores from '@/components/sections/companies/distribuidores.vue';
-import Splash from '@/components/ui/Splash.vue';
-
 export default {
   name: 'Home',
   components: {
-    HeroHeader,
-    ProductExperience,
-    ContactForm,
-    Distribuidores,
-    Splash,
+    HeroHeader: () => import('@/components/sections/HeroHeader.vue'),
+    ProductExperience: () => import('@/components/sections/ProductExperience.vue'),
+    ContactForm: () => import('@/components/sections/Form.vue'),
+    Distribuidores: () => import('@/components/sections/companies/distribuidores.vue'),
+    Splash: () => import('@/components/ui/Splash.vue'),
   },
   mounted() {
     window.addEventListener('keydown', (e) => {

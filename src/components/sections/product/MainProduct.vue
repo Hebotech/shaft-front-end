@@ -1,16 +1,20 @@
 <template>
-<div class="main-product">
-    <div class="circle"/>
-    <img
+<div>
+<div
+  :style="`background-image:url(${activeProduct.images[counter]})`"
+  class="main-product"
+>
+    <!-- <img
         :src="activeProduct.images[counter]"
         class="
             img-fluid
             active-product
             animated
             slideInDown
-            slower
         "
-    >
+    > -->
+</div>
+    <div class="circle"/>
 </div>
 </template>
 
@@ -30,10 +34,14 @@ export default {
 
 <style lang='scss' scoped>
 @media (max-width: 576px) {
+   .main-product{
+    height: 250px!important;
+    width: 250px!important;
+  }
   .circle{
         position: absolute;
-        top:2%!important;
-        left:10%!important;
+        top:10%!important;
+        left:15%!important;
         width: 0px!important;
         height: 0px!important;
         align-self: center;
@@ -44,35 +52,43 @@ export default {
       }
  }
 @media (max-width: 768px) {
-  .circle{
-        position: absolute;
-        top:1%!important;
-        left:9%!important;
-        width: 0px!important;
-        height: 0px!important;
-        align-self: center;
-        padding:15%;
-      }
+  .main-product{
+    height: 250px!important;
+    width: 250px!important;
+  }
+  // .circle{
+  //       position: absolute;
+  //       top:1%!important;
+  //       left:9%!important;
+  //       width: 0px!important;
+  //       height: 0px!important;
+  //       align-self: center;
+  //       padding:15%;
+  //     }
       img{
         max-width:90%!important;
       }
  }
-.main-product{
-    align-content:center;
-      .circle{
+ .circle{
         position: absolute;
-        top:2%;
-        left:10%;
+        top:5%;
+        left:14%;
         box-shadow: 3px 3px 9px #0000002b;
         // width: 550px;
-        padding:40%;
+        padding:35%;
         // height: 550px;
         background-color:white;
         border-radius: 50%;
         overflow:visible;
+        z-index: -1;
       }
-      img{
-        width:85%;
-      }
+.main-product{
+    background-position: center!important;
+    background-size:contain;
+    align-content:center;
+    background-attachment: scroll;
+    height: 550px;
+    width: 550px;
+
     }
 </style>

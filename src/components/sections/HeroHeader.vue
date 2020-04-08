@@ -14,18 +14,18 @@
       <img
         src="@/assets/header-title.png"
         alt=""
-        class="w-50 img-fluid"
+        class="w-50 img-fluid animated fadeInUp"
       />
       <img
         src="@/assets/brand/logo.png"
         alt=""
         width="500px"
-        class="img-fluid text-center mt-3 logo"
+        class="img-fluid text-center mt-3 logo animated fadeInUp"
       >
       <div class="bg-bottom">
         <img
           src="@/assets/header-bottom.png"
-          class="img-fluid"
+          class="img-fluid animated bounceInUp"
         >
       </div>
   </div>
@@ -49,7 +49,8 @@ export default {
   background-color: $beta;
   overflow: hidden;
   height: 100vh;
-  background-size:contain;
+  background-size:cover;
+  // background-position:top 1000px;
   background-attachment: fixed;
 }
 .bg-bottom{
@@ -62,12 +63,18 @@ export default {
   padding-top:5%;
 }
 @media  (max-width: 1100px) {
+  .container-fluid{
+    height:70vh!important;
+  }
   .d-flex img:nth-of-type(1){
     min-width:100%!important;
     padding-top:35%;
   }
+  .bg-bottom{
+    top: 14.5%!important;
+  }
   .bg-bottom img{
-    height:500px;
+    height: 450px;
   }
  }
 </style>

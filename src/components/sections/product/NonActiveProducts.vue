@@ -25,12 +25,12 @@
           @click="setActiveProduct(3)"
         />
     </div>
-    <div
+    <!-- <div
       class="non-active-products center animated FadeInUp"
       :class="{activing:products[2].active}"
       :style="`background-image:url(${products[2].images[0]})`"
       @click="setActiveProduct(2)"
-    />
+    /> -->
     <div
       class="non-active-bottom justify-content-around d-flex flex-column"
     >
@@ -121,7 +121,6 @@ top:1.5%;
   position:absolute;
   bottom:13%;
   left: -4%;
-
   .non-active-products{
     transition:cubic-bezier(0.075, 0.82, 0.165, 1) .3s;
     background-size: cover;
@@ -131,7 +130,8 @@ top:1.5%;
   }
   .non-active-top{
       position: relative;
-      right: -10%;
+      bottom:10%;
+      right: -80%;
       :nth-of-type(1){
         position: relative;
         left: 110%;
@@ -139,28 +139,36 @@ top:1.5%;
       }
       :nth-of-type(2){
         position: relative;
-        left: 16%;
-        top:15%;
+        left:10%;
+        top:5%;
       }
       :nth-of-type(1).activing{
         left: 50%!important;
       }
+      :nth-of-type(2).activing{
+        left: -40%!important;
+      }
   }
   .non-active-bottom{
       position: relative;
-      right: 0%;
+      bottom:35%;
+      right: 10%;
       :nth-of-type(2){
         position: relative;
-        left: 12%;
-        top:15%;
+        right: 20%;
+        top:25%;
       }
       :nth-of-type(1){
         position: relative;
-        right: 40%;
-        top: 8%;
+        right: 0%;
+        top: 20%;
+      }
+      :nth-of-type(2).activing{
+        left: -60%!important;
       }
       :nth-of-type(1).activing{
-        left: -70%!important;
+        top:10%!important;
+        left: -10%!important;
       }
   }
 }

@@ -9,6 +9,21 @@
     font-family: 'shaft-h1';
     src: url("~@/styles/lhfasylum-webfont.woff") format('woff');
 }
+@font-face {
+    font-family: 'MensuraBold';
+    src: url('~@/styles/mensurabold-webfont.woff2') format('woff2'),
+         url('~@/styles/mensurabold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'MensuraLight';
+    src: url('~@/styles/mensuralight-webfont.woff2') format('woff2'),
+         url('~@/styles/mensuralight-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

@@ -12,83 +12,155 @@ export default new Vuex.Store({
     activeProduct:{},
     products:[
       {
-        name:'Producto 1',
+        name:'Border',
         description:'Ésta es la súper descripción del producto 1',
         active:true,
-        model:'SH-520',
+        model:'SH-PRO600',
         certificates:[
           '../certificates/1.png',
           '../certificates/2.png',
           '../certificates/3.png',
         ],
         images:[
-          '../products/1/1.png',
-          '../products/1/2.png'
+          '../products/SHPRO600/BORDER/1.png',
+          '../products/SHPRO600/BORDER/2.png',
+          '../products/SHPRO600/BORDER/3.png',
+          '../products/SHPRO600/BORDER/4.png',
+          '../products/SHPRO600/BORDER/5.png',
+          '../products/SHPRO600/BORDER/6.png',
+          '../products/SHPRO600/BORDER/7.png',
         ],
         index:0
       },
       {
-        name:'Producto 2',
+        name:'Frontier',
         description:'Ésta es la súper descripción del producto 2',
         active:false,
-        model:'SH-520',
+        model:'SH-PRO600',
         certificates:[
           '../certificates/3.png',
           '../certificates/2.png',
           '../certificates/1.png',
         ],
         images:[
-          '../products/2/1.png',
+          '../products/SHPRO600/FRONTIER/1.png',
+          '../products/SHPRO600/FRONTIER/2.png',
         ],
         index:1
       },
       {
-        name:'Producto 3',
+        name:'Kapital',
         description:'Ésta es la súper descripción del producto 3',
         active:false,
-        model:'SH-520',
+        model:'SH-211',
         certificates:[
           '../certificates/3.png',
           '../certificates/1.png',
           '../certificates/2.png',
         ],
         images:[
-          '../products/3/1.png',
-          '../products/3/2.png',
+          '../products/SH211/KAPITAL/1.png',
+          '../products/SH211/KAPITAL/2.png',
+          '../products/SH211/KAPITAL/3.png',
+          '../products/SH211/KAPITAL/4.png',
+          '../products/SH211/KAPITAL/5.png',
         ],
         index:2
       },
       {
-        name:'Producto 4',
+        name:'Speedy',
         description:'Ésta es la súper descripción del producto 4',
         active:false,
-        model:'SH-520',
+        model:'SH-211',
         certificates:[
           '../certificates/3.png',
           '../certificates/1.png',
           '../certificates/2.png',
         ],
         images:[
-          '../products/4/1.png',
-          '../products/4/2.png',
+          '../products/SH211/SPEEDY/1.png',
+          '../products/SH211/SPEEDY/2.png',
+          '../products/SH211/SPEEDY/3.png',
+          '../products/SH211/SPEEDY/4.png',
+          '../products/SH211/SPEEDY/5.png',
+          '../products/SH211/SPEEDY/6.png',
+          '../products/SH211/SPEEDY/7.png',
         ],
         index:3
       },
       {
-        name:'5',
+        name:'Pika Zombie',
         description:'Ésta es la súper descripción del 5',
         active:false,
-        model:'SH-520',
+        model:'SH-591',
         certificates:[
           '../certificates/1.png',
           '../certificates/2.png',
           '../certificates/3.png',
         ],
         images:[
-          '../products/5/1.png',
-          '../products/5/2.png',
+          '../products/SH591/PIKA/1.png',
+          '../products/SH591/PIKA/2.png',
+          '../products/SH591/PIKA/3.png',
+          '../products/SH591/PIKA/4.png',
+          '../products/SH591/PIKA/5.png',
+          '../products/SH591/PIKA/6.png',
         ],
         index:4
+      },
+      {
+        name:'Zeta',
+        description:'Ésta es la súper descripción del 5',
+        active:false,
+        model:'SH-591',
+        certificates:[
+          '../certificates/1.png',
+          '../certificates/2.png',
+          '../certificates/3.png',
+        ],
+        images:[
+          '../products/SH591/ZETA/1.png',
+          '../products/SH591/ZETA/2.png',
+          '../products/SH591/ZETA/3.png',
+        ],
+        index:5
+      },
+      {
+        name:'Demon Z',
+        description:'Ésta es la súper descripción del 5',
+        active:false,
+        model:'SH-591',
+        certificates:[
+          '../certificates/1.png',
+          '../certificates/2.png',
+          '../certificates/3.png',
+        ],
+        images:[
+          '../products/SH591/DEMON/1.png',
+          '../products/SH591/DEMON/2.png',
+          '../products/SH591/DEMON/3.png',
+          '../products/SH591/DEMON/4.png',
+          '../products/SH591/DEMON/5.png',
+          '../products/SH591/DEMON/6.png',
+          '../products/SH591/DEMON/7.png',
+        ],
+        index:6
+      },
+      {
+        name:'SH3690',
+        description:'Ésta es la súper descripción del 5',
+        active:false,
+        model:'SH-3690',
+        certificates:[
+          '../certificates/1.png',
+          '../certificates/2.png',
+          '../certificates/3.png',
+        ],
+        images:[
+          '../products/SH3690/1.png',
+          '../products/SH3690/2.png',
+        ],
+        index:7
       },
     ], 
   },
