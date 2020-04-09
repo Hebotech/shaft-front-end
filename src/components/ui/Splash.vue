@@ -18,18 +18,15 @@ export default {
 
 <style lang='scss' scoped>
 .pattern-wrapper{
-  // overflow:hidden;
-  // z-index:-1;
-  top: 150%;
+  top: 190%;
   position: absolute;
   left: -80%;
 }
 .pattern{
   z-index: 0;
-  position:sticky;
-  top:0;
-  // mask:url(http://localhost:8081/img/splash.aef018d5.svg);
-  mask-position: left;
+  position: sticky;
+  top:150px;
+  mask-position:right;
   mask-size:cover;
   background-color:$alpha100;
 }

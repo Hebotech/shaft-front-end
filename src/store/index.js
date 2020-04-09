@@ -13,13 +13,14 @@ export default new Vuex.Store({
     products:[
       {
         name:'Border',
+        color: '#DC3969',
         description:'Ésta es la súper descripción del producto 1',
         active:true,
         model:'SH-PRO600',
         certificates:[
-          '../certificates/1.png',
-          '../certificates/2.png',
-          '../certificates/3.png',
+          'https://shafthelmets.com/wp-content/uploads/2016/08/3-2-300x300.png',
+          'https://shafthelmets.com/wp-content/uploads/2016/08/3-1-300x300.png',
+          'https://shafthelmets.com/wp-content/uploads/2016/09/9-compressor-300x300.png',
         ],
         images:[
           '../products/SHPRO600/BORDER/1.png',
@@ -34,13 +35,14 @@ export default new Vuex.Store({
       },
       {
         name:'Frontier',
+        color: '#1B1B1B',
         description:'Ésta es la súper descripción del producto 2',
         active:false,
         model:'SH-PRO600',
         certificates:[
-          '../certificates/3.png',
-          '../certificates/2.png',
-          '../certificates/1.png',
+          'https://shafthelmets.com/wp-content/uploads/2016/08/3-2-300x300.png',
+          'https://shafthelmets.com/wp-content/uploads/2016/08/3-1-300x300.png',
+          'https://shafthelmets.com/wp-content/uploads/2016/09/9-compressor-300x300.png',
         ],
         images:[
           '../products/SHPRO600/FRONTIER/1.png',
@@ -50,6 +52,7 @@ export default new Vuex.Store({
       },
       {
         name:'Kapital',
+        color: '#DDE949',
         description:'Ésta es la súper descripción del producto 3',
         active:false,
         model:'SH-211',
@@ -69,6 +72,7 @@ export default new Vuex.Store({
       },
       {
         name:'Speedy',
+        color: '#1548C2',
         description:'Ésta es la súper descripción del producto 4',
         active:false,
         model:'SH-211',
@@ -90,13 +94,14 @@ export default new Vuex.Store({
       },
       {
         name:'Pika Zombie',
+        color: '#E1EA4A',
         description:'Ésta es la súper descripción del 5',
         active:false,
         model:'SH-591',
         certificates:[
-          '../certificates/1.png',
-          '../certificates/2.png',
-          '../certificates/3.png',
+          'https://shafthelmets.com/wp-content/uploads/2016/08/3-1-300x300.png',
+          'https://shafthelmets.com/wp-content/uploads/2016/08/3-2-300x300.png',
+          'https://shafthelmets.com/wp-content/uploads/2016/08/2-5-300x300.png',
         ],
         images:[
           '../products/SH591/PIKA/1.png',
@@ -110,13 +115,14 @@ export default new Vuex.Store({
       },
       {
         name:'Zeta',
+        color: '#4D514E',
         description:'Ésta es la súper descripción del 5',
         active:false,
         model:'SH-591',
         certificates:[
-          '../certificates/1.png',
-          '../certificates/2.png',
-          '../certificates/3.png',
+          'https://shafthelmets.com/wp-content/uploads/2016/08/3-1-300x300.png',
+          'https://shafthelmets.com/wp-content/uploads/2016/08/3-2-300x300.png',
+          'https://shafthelmets.com/wp-content/uploads/2016/08/2-5-300x300.png',
         ],
         images:[
           '../products/SH591/ZETA/1.png',
@@ -127,13 +133,14 @@ export default new Vuex.Store({
       },
       {
         name:'Demon Z',
+        color: '#2B367F',
         description:'Ésta es la súper descripción del 5',
         active:false,
         model:'SH-591',
         certificates:[
-          '../certificates/1.png',
-          '../certificates/2.png',
-          '../certificates/3.png',
+          'https://shafthelmets.com/wp-content/uploads/2016/08/3-1-300x300.png',
+          'https://shafthelmets.com/wp-content/uploads/2016/08/3-2-300x300.png',
+          'https://shafthelmets.com/wp-content/uploads/2016/08/2-5-300x300.png',
         ],
         images:[
           '../products/SH591/DEMON/1.png',
@@ -148,13 +155,14 @@ export default new Vuex.Store({
       },
       {
         name:'SH3690',
+        color: '#232222',
         description:'Ésta es la súper descripción del 5',
         active:false,
         model:'SH-3690',
         certificates:[
-          '../certificates/1.png',
-          '../certificates/2.png',
-          '../certificates/3.png',
+          'https://shafthelmets.com/wp-content/uploads/2016/09/SAT-compressor.png',
+          'https://shafthelmets.com/wp-content/uploads/2016/08/3-1-300x300.png',
+          'https://shafthelmets.com/wp-content/uploads/2016/08/3-2-300x300.png',
         ],
         images:[
           '../products/SH3690/1.png',

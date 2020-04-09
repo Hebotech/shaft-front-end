@@ -1,19 +1,18 @@
 <template>
 <div>
-<div
-  :style="`background-image:url(${activeProduct.images[counter]})`"
-  class="main-product"
->
-    <!-- <img
-        :src="activeProduct.images[counter]"
-        class="
-            img-fluid
-            active-product
-            animated
-            slideInDown
-        "
-    > -->
-</div>
+  <transition
+    mode="out-in"
+    enter-active-class="animated zoomIn faster"
+    before-leave-class="animated zoomOutDown"
+    leave-class="animated zoomOutDown"
+  >
+    <slot v-if="!activeProduct"></slot>
+    <img
+      v-else
+      :src="`${activeProduct.images[counter]}`"
+      class="main-product"
+    />
+  </transition>
     <div class="circle"/>
 </div>
 </template>
@@ -56,39 +55,30 @@ export default {
     height: 250px!important;
     width: 250px!important;
   }
-  // .circle{
-  //       position: absolute;
-  //       top:1%!important;
-  //       left:9%!important;
-  //       width: 0px!important;
-  //       height: 0px!important;
-  //       align-self: center;
-  //       padding:15%;
-  //     }
-      img{
-        max-width:90%!important;
-      }
+  img{
+    max-width:90%!important;
+  }
  }
  .circle{
-        position: absolute;
-        top:5%;
-        left:14%;
-        box-shadow: 3px 3px 9px #0000002b;
-        // width: 550px;
-        padding:35%;
-        // height: 550px;
-        background-color:white;
-        border-radius: 50%;
-        overflow:visible;
-        z-index: -1;
+        // position: absolute;
+        // top:5%;
+        // left:14%;
+        // box-shadow: 3px 3px 9px #0000002b;
+        // // width: 550px;
+        // padding:35%;
+        // // height: 550px;
+        // background-color:white;
+        // border-radius: 50%;
+        // overflow:visible;
+        // z-index: -1;
       }
 .main-product{
     background-position: center!important;
     background-size:contain;
     align-content:center;
     background-attachment: scroll;
-    height: 550px;
-    width: 550px;
-
+    height: 600px;
+    width: 600px;
+    filter:drop-shadow(4px 9.69px 20px rgba(0, 0, 0, 0.2));
     }
 </style>

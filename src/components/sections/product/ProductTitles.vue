@@ -3,12 +3,13 @@
   order-2
   order-sm-2
   order-xl-1
-  col-md-3
+  col-md-2
   col-sm-12
   d-flex
   flex-md-column
   flex-sm-row
-  justify-content-around"
+  justify-content-around
+  justify-content-md-center"
 >
   <img
     v-for="(certificate, certificateIndex) in activeProduct.certificates"
@@ -39,11 +40,11 @@ export default {
     font-size: 3em;
   }
   img{
-    width:25%;
+    width:17%;
   }
 }
 }
 img{
-  width:35%;
+  width:60%;
 }
 </style>

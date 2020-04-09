@@ -1,21 +1,20 @@
 <template>
 <div class="
   bg-circle
-  col-md-6
+  col-md-7
   col-sm-10
-  col-10
+  col-12
   mb-3
   mt-3
   d-flex
-  justify-content-center
+  flex-row-reverse
+  justify-content-between
   items-center
   order-1
   order-sm-1
   order-md-2
   order-xl-2
 "
-  @keyup.up="nextProduct"
-  @keyup.down="lastProduct"
   v-hammer:swipe.right="nextImage"
   v-hammer:swipe.left="lastImage"
   v-hammer:swipe.up="nextProduct"
@@ -81,13 +80,13 @@ export default {
           this.lastImage();
           break;
         case 38:
-          this.nextProduct();
+          this.lastProduct();
           break;
         case 39:
           this.nextImage();
           break;
         case 40:
-          this.lastProduct();
+          this.nextProduct();
           break;
         // no default
       }
@@ -97,17 +96,5 @@ export default {
 </script>
 
 <style lang='scss' scoped>
-@media (max-width: 768px) {
-  .bg-circle{
-    margin:0% 10%;
-    padding:0% 1%!important;
-    border: none!important;
-  }
-}
-.bg-circle{
-    border:1px solid #B5B5B5;
-    border-radius: 50%;
-    align-items: center;
-    padding:0%;
-}
+
 </style>
