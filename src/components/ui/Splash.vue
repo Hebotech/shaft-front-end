@@ -6,7 +6,6 @@
       class="pattern img-fluid w-100"
       :style="{'mask-image': 'url('+require('@/assets/splash.svg')+')'}"
     >
-      <!-- :style="{'mask': 'url('+require('@/assets/splash.svg')+')'}" -->
   </div>
 </template>
 
