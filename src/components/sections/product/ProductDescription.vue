@@ -19,7 +19,7 @@
   <p
   :style="{'color': `${fontColor[activeProduct.index]}`}"
   >
-    {{activeProduct.description}}
+    <!-- {{activeProduct.description}} -->
   </p>
 
 </div>
