@@ -1,0 +1,40 @@
+{
+  "name": "Shaft Front End",
+  "description": "This is the front end for the Shaft Landing page",
+  "keywords": [
+    "productivity",
+    "HTML5",
+    "scalpel"
+  ],
+  "repository": "https://github.com/Hebotech/shaft-front-end",
+  "logo": "https://small-sharp-tool.com/logo.svg",
+  "success_url": "/",
+  "scripts": {
+    "postdeploy": "npm run build"
+  },
+  "env": {
+    "SECRET_TOKEN": {
+      "description": "A secret key for verifying the integrity of signed cookies.",
+      "generator": "secret"
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 2,
+      "size": "Performance-M"
+    }
+  },
+  "image": "heroku/nodejs",
+  "buildpacks": [
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-static"
+    }
+  ],
+  "environments": {
+    "test": {
+      "scripts": {
+        "test": "npm run dev"
+      }
+    }
+  }
+}

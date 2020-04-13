@@ -71,10 +71,12 @@ export default {
     padding-top:35%;
   }
   .bg-bottom{
-    top: 14.5%!important;
+    position: sticky!important;
   }
   .bg-bottom img{
+    // position: relative!important;
     height: 450px;
+    width:100%;
   }
  }
 </style>

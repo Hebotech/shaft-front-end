@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 const axios = require('axios');
-const urlBase='http://localhost:8080'
+const urlBase='https://backend-shaft.herokuapp.com'
 
 Vue.use(Vuex);
 

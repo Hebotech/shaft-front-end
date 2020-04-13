@@ -4,6 +4,15 @@
   </div>
 </template>
 
+<script>
+import store from './store/index';
+
+export default {
+  store,
+  name: 'Shaft Helmets',
+};
+</script>
+
 <style lang="scss">
 @font-face {
     font-family: 'shaft-h1';
