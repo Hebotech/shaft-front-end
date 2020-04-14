@@ -16,26 +16,43 @@
   </h3>
   <div
     class="
+      mr-3
+      ml-3
       arrows-container
-      justify-content-center
+      justify-content-around
       justify-content-md-end
     "
     :style="{'color': `${fontColor[activeProduct.index]}`}"
   >
     <div
+      class="arrowContainer d-md-none"
+      @click="lastProduct"
+    >
+      <fontawesome
+        class="animated fadeInRight fa fa-arrow-down"
+      />
+    </div>
+    <div
       class="arrowContainer"
       @click="lastImage"
     >
         <fontawesome
-          class="animated fadeInLeft mr-3 fa fa-arrow-left"
+          class="animated fadeInLeft mr-md-3 fa fa-arrow-left"
         />
       </div>
-    <div
-      class="arrowContainer"
+    <div class="arrowContainer"
       @click="nextImage"
     >
+       <fontawesome
+        class="animated fadeInRight ml-md-3 fa fa-arrow-right"
+      />
+    </div>
+    <div
+      class="arrowContainer d-md-none"
+      @click="lastProduct"
+    >
       <fontawesome
-        class="animated fadeInRight ml-3 fa fa-arrow-right"
+        class="animated fadeInRight fa fa-arrow-up"
       />
     </div>
   </div>
@@ -81,6 +98,12 @@ export default {
       } else {
         this.$store.commit('IMAGES_LENGTH', this.activeProduct.images.length - 1);
       }
+    },
+    nextProduct() {
+      this.$store.dispatch('nextProduct');
+    },
+    lastProduct() {
+      this.$store.dispatch('lastProduct');
     },
   },
 };

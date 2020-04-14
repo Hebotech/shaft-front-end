@@ -9,32 +9,31 @@
     "
     >
     <div
-      class="non-active-top justify-content-center justify-content-md-between d-flex flex-column"
+      class="justify-content-center justify-content-md-between d-flex flex-column"
     >
-        <div
+      <product
           v-for="(product, productIndex) in products"
+          v-bind="product"
+          :productIndex="productIndex"
           :key="productIndex"
-          class="non-active-products animated FadeInUp"
           :class="{activing:products[productIndex].active}"
-          :style="`background-image:url(${products[productIndex].images[0]})`"
-          @click="setActiveProduct(productIndex)"
-        />
+          class="non-active-products animated FadeInUp"
+      />
     </div>
   </div>
 </template>
 
 <script>
+import product from '@/components/ui/products/product.vue';
+
 export default {
   name: 'NonActiveProduct',
+  components: {
+    product,
+  },
   computed: {
     products() {
       return this.$store.state.products;
-    },
-  },
-  methods: {
-    async setActiveProduct(index) {
-      await this.$store.commit('DEACTIVATE_PRODUCTS');
-      await this.$store.commit('SELECT_ACTIVE_PRODUCT', index);
     },
   },
 };

@@ -75,9 +75,8 @@ h1{
   .container-fluid{
     height:70vh!important;
   }
-  .d-flex img:nth-of-type(1){
+  .d-flex h1{
     min-width:100%!important;
-    padding-top:35%;
   }
   .bg-bottom{
     position: sticky!important;
@@ -85,7 +84,8 @@ h1{
   .bg-bottom img{
     // position: relative!important;
     height: 450px;
-    width:100%;
+    min-width:100vh;
+    z-index:0;
   }
  }
 </style>
