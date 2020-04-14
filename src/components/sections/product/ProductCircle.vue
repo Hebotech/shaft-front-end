@@ -15,13 +15,13 @@
   order-md-2
   order-xl-2
 "
-  v-hammer:swipe.right="nextImage"
-  v-hammer:swipe.left="lastImage"
-  v-hammer:swipe.up="nextProduct"
-  v-hammer:swipe.down="lastProduct"
 >
   <main-product
     :counter="counter"
+     v-hammer:swipe.right="nextImage"
+  v-hammer:swipe.left="lastImage"
+  v-hammer:swipe.up="lastProduct"
+  v-hammer:swipe.down="nextProduct"
   />
   <div class="products-around">
     <non-active-products/>

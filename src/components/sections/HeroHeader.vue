@@ -56,6 +56,7 @@ h1{
   overflow: hidden;
   height: 100vh;
   background-size:cover;
+  // background-position:top 1000px;
   background-attachment: fixed;
 }
 .bg-bottom{
