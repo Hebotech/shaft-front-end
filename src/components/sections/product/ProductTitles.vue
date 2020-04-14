@@ -11,12 +11,24 @@
   justify-content-around
   justify-content-md-center"
 >
-  <img
-    v-for="(certificate, certificateIndex) in activeProduct.certificates"
-    :key="certificateIndex"
-    :src="certificate"
-    class="img-fluid"
+  <transition
+    mode="out-in"
+    enter-active-class="animated jackInTheBox faster"
+    leave-active-class="animated rollOut"
   >
+      <slot v-if="!activeProduct"></slot>
+  <div
+      v-else
+  >
+      <img
+        v-for="(certificate, certificateIndex) in activeProduct.certificates"
+        :key="certificateIndex"
+        :src="certificate"
+        alt="shaft mexico certificado"
+        class="img-fluid"
+      >
+  </div>
+  </transition>
 </div>
 </template>
 

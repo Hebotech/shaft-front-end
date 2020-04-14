@@ -11,14 +11,13 @@
       justify-content-center
     "
   >
-      <img
-        src="@/assets/header-title.png"
-        alt=""
-        class="w-50 img-fluid animated fadeInUp"
-      />
+      <h1>
+        Bienvenido a la nueva<br>
+         experiencia
+      </h1>
       <img
         src="@/assets/brand/logo.png"
-        alt=""
+        alt="shaft mexico "
         width="500px"
         class="img-fluid text-center mt-3 logo animated fadeInUp"
       >
@@ -39,6 +38,13 @@ export default {
 </script>
 
 <style lang='scss' scoped>
+h1{
+  font-family: shaft-h1;
+  color:#333;
+  font-size:6em;
+  text-anchor: middle;
+  display:inline-block;
+}
 .logo{
   filter:drop-shadow(14px 5px 7px rgba(0, 0, 0, 0.3));
 }
@@ -63,6 +69,9 @@ export default {
   padding-top:5%;
 }
 @media  (max-width: 1100px) {
+  h1{
+    font-size:3em!important;
+  }
   .container-fluid{
     height:70vh!important;
   }

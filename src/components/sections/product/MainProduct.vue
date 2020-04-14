@@ -8,6 +8,7 @@
   >
     <slot v-if="!activeProduct"></slot>
     <img
+      :alt="`shaft mexico casco ${activeProduct.name}`"
       v-else
       :src="`${activeProduct.images[counter]}`"
       class="main-product"
@@ -59,19 +60,6 @@ export default {
     max-width:90%!important;
   }
  }
- .circle{
-        // position: absolute;
-        // top:5%;
-        // left:14%;
-        // box-shadow: 3px 3px 9px #0000002b;
-        // // width: 550px;
-        // padding:35%;
-        // // height: 550px;
-        // background-color:white;
-        // border-radius: 50%;
-        // overflow:visible;
-        // z-index: -1;
-      }
 .main-product{
     background-position: center!important;
     background-size:contain;

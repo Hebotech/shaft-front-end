@@ -6,22 +6,39 @@
   order-md-3
   col-md-3
   col-sm-12
-  text-center
   text-md-right
   "
 >
-
   <h3
   :style="{'color': `${fontColor[activeProduct.index]}`}"
   >
     {{activeProduct.model}}
   </h3>
-  <p
-  :style="{'color': `${fontColor[activeProduct.index]}`}"
+  <div
+    class="
+      arrows-container
+      justify-content-center
+      justify-content-md-end
+    "
+    :style="{'color': `${fontColor[activeProduct.index]}`}"
   >
-    <!-- {{activeProduct.description}} -->
-  </p>
-
+    <div
+      class="arrowContainer"
+      @click="lastImage"
+    >
+        <fontawesome
+          class="animated fadeInLeft mr-3 fa fa-arrow-left"
+        />
+      </div>
+    <div
+      class="arrowContainer"
+      @click="nextImage"
+    >
+      <fontawesome
+        class="animated fadeInRight ml-3 fa fa-arrow-right"
+      />
+    </div>
+  </div>
 </div>
 </template>
 
@@ -46,6 +63,25 @@ export default {
     activeProduct() {
       return this.$store.getters.activeProduct;
     },
+    counter() {
+      return this.$store.state.counter;
+    },
+  },
+  methods: {
+    nextImage() {
+      if (this.counter <= this.activeProduct.images.length - 2) {
+        this.$store.commit('ADDING_COUNTER');
+      } else {
+        this.$store.commit('RESTART_COUNTER');
+      }
+    },
+    lastImage() {
+      if (this.counter !== 0) {
+        this.$store.commit('SUBSTRACTING_COUNTER');
+      } else {
+        this.$store.commit('IMAGES_LENGTH', this.activeProduct.images.length - 1);
+      }
+    },
   },
 };
 </script>
@@ -54,7 +90,7 @@ export default {
 @media (max-width: 768px) {
   *{color:#333!important;}
   h3{
-    font-size:2em!important;
+    font-size:3em!important;
   }
   p{
     font-size:1em!important;
@@ -62,14 +98,18 @@ export default {
 }
 h3{
   @extend .h4-font;
-  font-size:3em;
+  font-size:5em;
   color:white;
 }
-p{
+.arrows-container{
   @extend .h6-font;
   font-stretch: expanded;
-  font-size:1.5em;
-    color:white;
+  font-size:3em;
+  display:flex;
+  justify-content:flex-end;
+}
+.arrowContainer:hover{
+  cursor:pointer!important;
 }
 .description{
   display: flex;

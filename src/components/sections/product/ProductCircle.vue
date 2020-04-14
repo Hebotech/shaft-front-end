@@ -43,33 +43,29 @@ export default {
     activeProduct() {
       return this.$store.getters.activeProduct;
     },
-  },
-  data() {
-    return {
-      counter: 0,
-    };
+    counter() {
+      return this.$store.state.counter;
+    },
   },
   methods: {
     nextProduct() {
-      this.counter = 0;
       this.$store.dispatch('nextProduct');
     },
     lastProduct() {
-      this.counter = 0;
       this.$store.dispatch('lastProduct');
     },
     nextImage() {
       if (this.counter <= this.activeProduct.images.length - 2) {
-        this.counter += 1;
+        this.$store.commit('ADDING_COUNTER');
       } else {
-        this.counter = 0;
+        this.$store.commit('RESTART_COUNTER');
       }
     },
     lastImage() {
-      if (this.counter >= this.activeProduct.images.length - 1) {
-        this.counter -= 1;
+      if (this.counter !== 0) {
+        this.$store.commit('SUBSTRACTING_COUNTER');
       } else {
-        this.counter = this.activeProduct.images.length - 1;
+        this.$store.commit('IMAGES_LENGTH', this.activeProduct.images.length - 1);
       }
     },
   },

@@ -1,6 +1,10 @@
 <template>
-  <div class="distribuidores pt-3 pt-md-0 ">
-  <img src="@/assets/DONDECOMPRAR.png" alt="" class="w-75 img-fluid mb-3 animated fadeInDown">
+  <div class="distribuidores">
+  <img
+    src="@/assets/DONDECOMPRAR.png"
+    alt="donde comprar shaft"
+    class="w-75 img-fluid mb-3 animated fadeInDown"
+  >
     <div class="row m-0">
         <websites
           :company="company"
@@ -33,6 +37,7 @@ export default {
 <style lang='scss' scoped>
 .distribuidores{
   // z-index:;
+  padding-top:8%;
   // position:relative;
   background-color:#F7F7F7;
   img{

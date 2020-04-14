@@ -9,17 +9,19 @@ import store from './store/index';
 
 export default {
   store,
-  name: 'Shaft Helmets',
+  name: 'ShaftHelmets',
 };
 </script>
 
 <style lang="scss">
 @font-face {
     font-family: 'shaft-h1';
+    font-display: swap;
     src: url("~@/styles/lhfasylum-webfont.woff") format('woff');
 }
 @font-face {
     font-family: 'MensuraBold';
+    font-display: swap;
     src: url('~@/styles/mensurabold-webfont.woff2') format('woff2'),
          url('~@/styles/mensurabold-webfont.woff') format('woff');
     font-weight: normal;
@@ -28,6 +30,7 @@ export default {
 }
 @font-face {
     font-family: 'MensuraLight';
+    font-display: swap;
     src: url('~@/styles/mensuralight-webfont.woff2') format('woff2'),
          url('~@/styles/mensuralight-webfont.woff') format('woff');
     font-weight: normal;
@@ -35,6 +38,7 @@ export default {
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-display: swap;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

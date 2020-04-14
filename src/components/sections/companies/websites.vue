@@ -14,6 +14,7 @@
           {{company.properties.website.value}}
         </p>
         <a
+          rel="noopener"
           :href="`http://${company.properties.website.value}`"
           class="btn border-0 animated fadeInDown slower "
           target="_blank"

@@ -10,6 +10,7 @@ export default new Vuex.Store({
     allCompanies:[],
     activeCompany:{},
     activeProduct:{},
+    counter:0,
     products:[
       {
         name:'Border',
@@ -197,6 +198,18 @@ export default new Vuex.Store({
     },
     SELECT_ACTIVE_PRODUCT(state ,index) {
       state.products[index].active=true
+    },
+    ADDING_COUNTER(state) {
+      state.counter += 1;
+    }, 
+    SUBSTRACTING_COUNTER(state){
+      state.counter -= 1;
+    },
+    RESTART_COUNTER(state) {
+      state.counter = 0;
+    },
+    IMAGES_LENGTH(state, length) {
+      state.counter = length;
     }
   },
   actions: {
@@ -243,6 +256,7 @@ export default new Vuex.Store({
     } else {
       commit('SET_ACTIVE_PRODUCT',0);
     };
+    commit('RESTART_COUNTER');
   },
   async lastProduct({commit,state,getters}){
     const indexProduct=getters.activeProduct.index
@@ -252,6 +266,7 @@ export default new Vuex.Store({
     } else {
       commit('SET_ACTIVE_PRODUCT',state.products.length-1);
     };
+    commit('RESTART_COUNTER');
   },
   },
 });
