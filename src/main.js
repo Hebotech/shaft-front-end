@@ -2,12 +2,16 @@ import Vue from 'vue';
 import App from './App.vue';
 import router from './router';
 import store from './store';
+import VueMeta from 'vue-meta'
 import '@fortawesome/fontawesome-free/css/all.css'
 import '@fortawesome/fontawesome-free/js/all.js'
 import VueAnalytics from 'vue-analytics';
-import VueHead from 'vue-head'
- 
-Vue.use(VueHead)
+
+
+Vue.use(VueMeta, {
+  // optional pluginOptions
+  refreshOnceOnNavigation: true
+})
 
 Vue.config.productionTip = false;
 

@@ -10,7 +10,7 @@ import store from './store/index';
 export default {
   store,
   name: 'ShaftHelmets',
-  head: {
+  metaInfo: {
     meta: [
       { name: 'description', content: 'Página oficial de Shaft Helmets México, encuentra la nueva colección y dónde comprar' },
       { property: 'og:title', content: 'Sitio Web Shaft Helmets México' },
