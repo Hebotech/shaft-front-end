@@ -18,6 +18,15 @@ export default {
     Distribuidores: () => import('@/components/sections/companies/distribuidores.vue'),
     Splash: () => import('@/components/ui/Splash.vue'),
   },
+  head: {
+    meta: [
+      { name: 'description', content: 'Página oficial de Shaft Helmets México, encuentra la nueva colección y dónde comprar', id: 'desc' },
+      { property: 'og:title', content: 'Sitio Web Shaft Helmets México' },
+      { property: 'og:type', content: 'website' },
+      { property: 'og:description', content: 'Descubre la nueva colección 🔥, encuentra dónde comprar 🗺 o vende Shaft 🤑' },
+      { property: 'og:image', content: '../../public/products/SH591/PIKA/2.png' },
+    ],
+  },
   mounted() {
     window.addEventListener('keydown', (e) => {
     // space and arrow keys

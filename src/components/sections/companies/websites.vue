@@ -38,6 +38,7 @@ export default {
   },
   methods: {
     addNewClick(id) {
+      this.$ga.event('Distribuidores', 'click', `${this.company.properties.name.value}`);
       if (this.company.properties.clics_de_hebotech.value === undefined) {
         this.$store.dispatch('clickCounter', id, this.company.properties.clics_de_hebotech.value);
       } else {

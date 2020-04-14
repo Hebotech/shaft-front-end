@@ -5,6 +5,9 @@ import store from './store';
 import '@fortawesome/fontawesome-free/css/all.css'
 import '@fortawesome/fontawesome-free/js/all.js'
 import VueAnalytics from 'vue-analytics';
+import VueHead from 'vue-head'
+ 
+Vue.use(VueHead)
 
 Vue.config.productionTip = false;
 
