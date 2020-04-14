@@ -17,12 +17,13 @@
       </h1>
       <img
         src="@/assets/brand/logo.png"
-        alt="shaft mexico "
+        alt="shaft mexico"
         width="500px"
         class="img-fluid text-center mt-3 logo"
       >
       <div class="bg-bottom">
         <img
+          alt="shaft mexico"
           src="@/assets/header-bottom.png"
           class="img-fluid"
         >
