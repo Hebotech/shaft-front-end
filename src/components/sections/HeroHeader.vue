@@ -19,12 +19,12 @@
         src="@/assets/brand/logo.png"
         alt="shaft mexico "
         width="500px"
-        class="img-fluid text-center mt-3 logo animated fadeInUp"
+        class="img-fluid text-center mt-3 logo"
       >
       <div class="bg-bottom">
         <img
           src="@/assets/header-bottom.png"
-          class="img-fluid animated bounceInUp"
+          class="img-fluid"
         >
       </div>
   </div>
@@ -56,7 +56,6 @@ h1{
   overflow: hidden;
   height: 100vh;
   background-size:cover;
-  // background-position:top 1000px;
   background-attachment: fixed;
 }
 .bg-bottom{
