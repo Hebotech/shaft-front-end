@@ -67,16 +67,6 @@ export default {
   height: 90px!important;
   transition:cubic-bezier(0.075, 0.82, 0.165, 1) .9s;
 }
-// .activing::before{
-//   background-color: black!important;
-//   content: "";
-//   width:16px;
-//   height:16px;
-//   position: absolute;
-//   border-radius:50%;
-//   left:100%;
-//   top:30%;
-// }
 .non-active-container{
   transform: rotate(-16deg);
   margin-right:3em;
