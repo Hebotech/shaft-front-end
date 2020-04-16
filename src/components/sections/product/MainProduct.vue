@@ -19,16 +19,11 @@
 </template>
 
 <script>
+import { productHelmetMixin } from '@/mixins/productHelmetsMixin';
+
 export default {
   name: 'MainProduct',
-  computed: {
-    activeProduct() {
-      return this.$store.getters.activeProduct;
-    },
-  },
-  props: {
-    counter: Number,
-  },
+  mixins: [productHelmetMixin],
 };
 </script>
 

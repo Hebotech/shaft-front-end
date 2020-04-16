@@ -33,13 +33,11 @@
 </template>
 
 <script>
+import { productHelmetMixin } from '@/mixins/productHelmetsMixin';
+
 export default {
   name: 'ProductTitles',
-  computed: {
-    activeProduct() {
-      return this.$store.getters.activeProduct;
-    },
-  },
+  mixins: [productHelmetMixin],
 };
 </script>
 

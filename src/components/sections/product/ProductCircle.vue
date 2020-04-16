@@ -26,6 +26,7 @@
 </template>
 
 <script>
+import { productHelmetMixin } from '@/mixins/productHelmetsMixin';
 import nonActiveProducts from './NonActiveProducts.vue';
 import MainProduct from './MainProduct.vue';
 
@@ -35,36 +36,7 @@ export default {
     nonActiveProducts,
     MainProduct,
   },
-  computed: {
-    activeProduct() {
-      return this.$store.getters.activeProduct;
-    },
-    counter() {
-      return this.$store.state.counter;
-    },
-  },
-  methods: {
-    nextProduct() {
-      this.$store.dispatch('nextProduct');
-    },
-    lastProduct() {
-      this.$store.dispatch('lastProduct');
-    },
-    nextImage() {
-      if (this.counter <= this.activeProduct.images.length - 2) {
-        this.$store.commit('ADDING_COUNTER');
-      } else {
-        this.$store.commit('RESTART_COUNTER');
-      }
-    },
-    lastImage() {
-      if (this.counter !== 0) {
-        this.$store.commit('SUBSTRACTING_COUNTER');
-      } else {
-        this.$store.commit('IMAGES_LENGTH', this.activeProduct.images.length - 1);
-      }
-    },
-  },
+  mixins: [productHelmetMixin],
   mounted() {
     window.addEventListener('keyup', (event) => {
       switch (event.keyCode) {

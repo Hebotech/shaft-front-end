@@ -1,3 +1,4 @@
 @/router/*.js
 **/*.js
-@/components/Sections/CalendarEvent.vue
+@/components/sections/**.vue
+@/components/sections/product/**.vue

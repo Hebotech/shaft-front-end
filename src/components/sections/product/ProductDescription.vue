@@ -60,6 +60,8 @@
 </template>
 
 <script>
+import { productHelmetMixin } from '@/mixins/productHelmetsMixin';
+
 export default {
   name: 'ProductDescription',
   data() {
@@ -76,14 +78,7 @@ export default {
       ],
     };
   },
-  computed: {
-    activeProduct() {
-      return this.$store.getters.activeProduct;
-    },
-    counter() {
-      return this.$store.state.counter;
-    },
-  },
+  mixins: [productHelmetMixin],
   methods: {
     nextImage() {
       if (this.counter <= this.activeProduct.images.length - 2) {

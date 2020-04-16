@@ -24,6 +24,7 @@
 </template>
 
 <script>
+import { productHelmetMixin } from '@/mixins/productHelmetsMixin';
 import product from '@/components/ui/products/product.vue';
 
 export default {
@@ -31,11 +32,7 @@ export default {
   components: {
     product,
   },
-  computed: {
-    products() {
-      return this.$store.state.products;
-    },
-  },
+  mixins: [productHelmetMixin],
 };
 </script>
 
@@ -67,6 +64,7 @@ export default {
   height: 90px!important;
   transition:cubic-bezier(0.075, 0.82, 0.165, 1) .9s;
 }
+
 .non-active-container{
   transform: rotate(-16deg);
   margin-right:3em;

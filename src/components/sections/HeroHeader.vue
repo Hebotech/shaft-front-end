@@ -45,9 +45,11 @@ h1{
   font-size:6em;
   text-anchor: middle;
   display:inline-block;
+  z-index:2;
 }
 .logo{
   filter:drop-shadow(14px 5px 7px rgba(0, 0, 0, 0.3));
+  z-index:2;
 }
 .pt{
   z-index:2;
@@ -57,13 +59,13 @@ h1{
   overflow: hidden;
   height: 100vh;
   background-size:cover;
-  // background-position:top 1000px;
   background-attachment: fixed;
 }
 .bg-bottom{
   position:absolute;
   min-width: 100%;
   left:0;
+  z-index:0;
   bottom:0%;
 }
 .d-flex:first-child{

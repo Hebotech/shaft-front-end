@@ -30,9 +30,12 @@
 </template>
 
 <script>
+import { productHelmetMixin } from '@/mixins/productHelmetsMixin';
+
 import ProductCircle from '@/components/sections/product/ProductCircle.vue';
 import ProductTitles from '@/components/sections/product/ProductTitles.vue';
 import ProductDescription from '@/components/sections/product/ProductDescription.vue';
+
 
 export default {
   name: 'ProductExperience',
@@ -41,14 +44,7 @@ export default {
     ProductTitles,
     ProductDescription,
   },
-  computed: {
-    nonActiveProducts() {
-      return this.$store.getters.nonActiveProducts;
-    },
-    activeProduct() {
-      return this.$store.getters.activeProduct;
-    },
-  },
+  mixins: [productHelmetMixin],
 };
 </script>
 
