@@ -1,7 +1,7 @@
 <template>
 <div
   class="container-fluid"
-  :style="{'background-image': 'url('+require('@/assets/bg-hero-header.svg')+')'}"
+  :style="{'background-image': 'url('+require('@/assets/bg-hero-header.png')+')'}"
 >
   <div
     class="
