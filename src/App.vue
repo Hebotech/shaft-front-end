@@ -10,15 +10,6 @@ import store from './store/index';
 export default {
   store,
   name: 'ShaftHelmets',
-  metaInfo: {
-    meta: [
-      { name: 'description', content: 'Descubre la nueva colección 🔥, encuentra dónde comprar 🗺 o vende Shaft 🤑' },
-      { property: 'og:title', content: 'Sitio Web Shaft Helmets México' },
-      { property: 'og:type', content: 'website' },
-      { property: 'og:description', content: 'Descubre la nueva colección 🔥, encuentra dónde comprar 🗺 o vende Shaft 🤑' },
-      { property: 'og:image', content: 'https://pure-cove-18399.herokuapp.com/products/SH591/PIKA/2.png' },
-    ],
-  },
 };
 </script>
 
