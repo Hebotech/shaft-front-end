@@ -2,7 +2,7 @@
 <intersect @enter="enter">
   <div class="distribuidores">
   <img
-    src="@/assets/DONDECOMPRAR.png"
+    src="@/assets/DONDECOMPRAR.webp"
     alt="donde comprar shaft"
     class="w-75 img-fluid mb-3 animated fadeInDown"
   >

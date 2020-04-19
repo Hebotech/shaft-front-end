@@ -1,7 +1,7 @@
 <template>
 <div
   class="container-fluid"
-  :style="{'background-image': 'url('+require('@/assets/bg-hero-header.png')+')'}"
+  :style="{'background-image': 'url('+require('@/assets/bg-hero-header.webp')+')'}"
 >
   <div
     class="
@@ -16,7 +16,7 @@
          experiencia
       </h1>
       <img
-        src="@/assets/brand/logo.png"
+        src="@/assets/brand/logo.webp"
         alt="shaft mexico"
         width="500px"
         class="img-fluid text-center mt-3 logo"
@@ -24,7 +24,7 @@
       <div class="bg-bottom">
         <img
           alt="shaft mexico"
-          src="@/assets/header-bottom.png"
+          src="@/assets/header-bottom.webp"
           class="img-fluid"
         >
       </div>

@@ -1,7 +1,13 @@
-// const PreloadWebpackPlugin = require('preload-webpack-plugin');
-// const HtmlWebpackPlugin = require('html-webpack-plugin')
+const PreloadWebpackPlugin = require('preload-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
+    configureWebpack: {
+        plugins: [
+            new HtmlWebpackPlugin(),
+            new PreloadWebpackPlugin()
+        ]
+    },
     css: {
         loaderOptions: {
             sass: {
@@ -9,10 +15,4 @@ module.exports = {
             }
         },
     },
-    // configureWebpack: {
-    //     plugins: [
-    //         new HtmlWebpackPlugin(),
-    //         new PreloadWebpackPlugin()
-    //     ]
-    // }
-    }
+}
