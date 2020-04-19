@@ -20,7 +20,7 @@ export default {
   },
   metaInfo: {
     meta: [
-      { name: 'description', content: 'Página oficial de Shaft Helmets México, encuentra la nueva colección y dónde comprar' },
+      { name: 'description', content: 'Página oficial de Shaft Helmets México, descubre la nueva colección 🔥, encuentra dónde comprar 🗺 o vende Shaft 🤑' },
       { property: 'og:title', content: 'Sitio Web Shaft Helmets México' },
       { property: 'og:type', content: 'website' },
       { property: 'og:description', content: 'Descubre la nueva colección 🔥, encuentra dónde comprar 🗺 o vende Shaft 🤑' },
