@@ -1,4 +1,5 @@
 <template>
+<intersect @enter="enter">
   <div class="distribuidores">
   <img
     src="@/assets/DONDECOMPRAR.png"
@@ -13,23 +14,29 @@
         />
     </div>
   </div>
+</intersect>
 </template>
 
 <script>
+import Intersect from 'vue-intersect';
 import websites from '@/components/sections/companies/websites.vue';
 
 export default {
   name: 'Home',
   components: {
     websites,
+    Intersect,
   },
-  mounted() {
-    this.$store.dispatch('fetchCompanies');
-  },
-  computed: {
-    companies() {
-      return this.$store.state.allCompanies;
+  methods: {
+    async enter() {
+      await this.$store.dispatch('fetchCompanies');
+      this.companies = this.$store.state.allCompanies;
     },
+  },
+  data() {
+    return {
+      companies: [],
+    };
   },
 };
 </script>

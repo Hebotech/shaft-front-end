@@ -1,11 +1,12 @@
 <template>
 <div
   class="
-  d-flex
-  flex-column
-  justify-content-around
-  justify-content-md-between
-  container-fluid"
+    d-flex
+    flex-column
+    justify-content-around
+    justify-content-md-between
+    container-fluid
+  "
 >
   <transition
       mode="out-in"
