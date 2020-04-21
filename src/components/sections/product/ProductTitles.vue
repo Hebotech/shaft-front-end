@@ -1,6 +1,5 @@
 <template>
-<div 
-  class="
+<div class="
   order-2
   order-sm-2
   order-xl-1
