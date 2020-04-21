@@ -1,7 +1,8 @@
 <template>
   <div class="home">
     <hero-header/>
-      <product-experience/>
+    <cta-button/>
+    <product-experience/>
     <distribuidores/>
     <splash/>
     <contact-form/>
@@ -16,11 +17,11 @@ export default {
     ProductExperience: () => import('@/components/sections/ProductExperience.vue'),
     ContactForm: () => import('@/components/sections/Form.vue'),
     Distribuidores: () => import('@/components/sections/companies/distribuidores.vue'),
+    CtaButton: () => import('@/components/ui/CtaButton.vue'),
     Splash: () => import('@/components/ui/Splash.vue'),
   },
   mounted() {
     window.addEventListener('keydown', (e) => {
-    // space and arrow keys
       if ([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
         e.preventDefault();
       }

@@ -8,8 +8,8 @@
 import store from './store/index';
 
 export default {
-  store,
   name: 'ShaftHelmets',
+  store,
 };
 </script>
 
@@ -37,7 +37,6 @@ export default {
     font-style: normal;
 }
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
   font-display: swap;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

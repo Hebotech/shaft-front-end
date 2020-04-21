@@ -54,10 +54,15 @@ export default {
   position:relative;
   z-index: 2;
 }
+p{
+  font-family: MensuraLight;
+  font-weight: 100;
+}
 .btn{
   background-color:$alpha;
   color:$title-dark;
   font-size: .95em;
+  font-family: MensuraBold;
   transition:ease-in .2s;
   box-shadow: 5px 5px 10px #00000038;
 }
@@ -73,6 +78,7 @@ export default {
     margin-bottom:3em;
   transition: cubic-bezier(0.075, 0.82, 0.165, 1) .5s;
   h5{
+      font-family: MensuraBold;
       border-radius:0px;
       transition:cubic-bezier(0.175, 0.885, 0.32, 1.275) .3s;
     }

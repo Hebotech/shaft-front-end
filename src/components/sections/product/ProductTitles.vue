@@ -27,6 +27,16 @@
         alt="shaft mexico certificado"
         class="img-fluid"
       >
+    <div
+      class="text-center"
+    >
+      <a
+        href="https://cascoscertificados.org/cascos-shaft-certificados/"
+        target="_blank"
+      >
+        Ver más
+      </a>
+  </div>
   </div>
   </transition>
 </div>
@@ -42,6 +52,11 @@ export default {
 </script>
 
 <style lang='scss' scoped>
+a{
+  font-family: MensuraBold;
+  text-decoration:underline;
+  color:$font-dark;
+}
 @media (max-width: 768px) {
   .container-fluid{
   background-color:$background-light!important;
