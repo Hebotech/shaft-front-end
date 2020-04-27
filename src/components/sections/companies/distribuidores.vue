@@ -7,11 +7,25 @@
     class="w-75 img-fluid mb-3 animated fadeInDown"
   >
     <div class="row m-0">
+      <div
+        class="col-md-6 col-sm-6 col-12 m-0"
+        v-for="(company,companyIndex) in favCompanies"
+        :key="companyIndex"
+      >
+        <websites
+          :isFav="true"
+          :company="company"
+        />
+      </div>
+      <div
+        class="col-md-4 col-sm-5 col-12 text-align-center"
+        v-for="(company,companyIndex) in shaftCompanies"
+        :key="companyIndex"
+      >
         <websites
           :company="company"
-          v-for="(company,companyIndex) in companies"
-          :key="companyIndex"
         />
+      </div>
     </div>
   </div>
 </intersect>
@@ -22,7 +36,7 @@ import Intersect from 'vue-intersect';
 import websites from '@/components/sections/companies/websites.vue';
 
 export default {
-  name: 'Home',
+  name: 'distribuidores',
   components: {
     websites,
     Intersect,
@@ -30,12 +44,14 @@ export default {
   methods: {
     async enter() {
       await this.$store.dispatch('fetchCompanies');
-      this.companies = this.$store.state.allCompanies;
+      this.favCompanies = this.$store.getters.favCompanies;
+      this.shaftCompanies = this.$store.getters.shaftCompanies;
     },
   },
   data() {
     return {
-      companies: [],
+      favCompanies: [],
+      shaftCompanies: [],
     };
   },
 };
@@ -49,7 +65,7 @@ export default {
   background-color:#F7F7F7;
   img{
     position:relative;
-  z-index:3;
+    z-index:3;
   }
 }
 </style>

@@ -1,12 +1,14 @@
 import axios from '@axios'
-const urlBase='localhost:8080'
+const urlBase='https://backend-shaft.herokuapp.com'
 
 const state = {
     allCompanies:[],
 }
 
 const getters = {
-    
+    favCompanies: state => {
+        return state.allCompanies.filter(company =>  company.properties.fav.value===true ? company : console.log(company))
+      }
 }
 
 const actions = {

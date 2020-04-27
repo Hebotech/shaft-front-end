@@ -180,6 +180,20 @@ export default new Vuex.Store({
     activeProduct: state  => {
       return state.products.find(product => product.active===true)
     },
+    favPropertyCompanies: (state) => {
+      return state.allCompanies.filter(company => company.properties.fav !== undefined && company.properties.name !==undefined)
+    },
+    favCompanies: (state, getters) => {
+      return getters.favPropertyCompanies
+        .filter( company => company.properties.fav.value === 'true')
+    },
+    shaftPropertyCompanies: (state) => {
+      return state.allCompanies.filter(company => company.properties.shaft !== undefined && company.properties.name !==undefined)
+    },
+    shaftCompanies: (state, getters) => {
+      return getters.shaftPropertyCompanies
+        .filter( company => company.properties.shaft.value === 'true')
+    }
   },
   mutations: {
     SET_ALL_COMPANIES(state,allCompanies){

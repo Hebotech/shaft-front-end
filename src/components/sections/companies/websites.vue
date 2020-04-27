@@ -1,10 +1,10 @@
 <template>
- <div
-      class="col-md-4 col-sm-6 col-12"
-     >
-  <div class='company'>
-    <div class="card mb-3 border-0 animated zoomIn faster">
+    <div
+      class="card mb-3 border-0 animated zoomIn faster"
+      :class="[ isFav ? 'is-fav' : 'regular' ]"
+    >
       <div class="card-body">
+        <i v-if="isFav" class="fas fa-crown    "></i>
         <h5
           class="card-title animated fadeInUp slower"
         >
@@ -24,8 +24,6 @@
         </a>
       </div>
     </div>
-  </div>
-</div>
 </template>
 
 <script>
@@ -34,7 +32,11 @@ export default {
   components: {
   },
   props: {
-    company: Object,
+    company: {
+      type: Object,
+      required: true,
+    },
+    isFav: Boolean,
   },
   methods: {
     addNewClick(id) {
@@ -50,7 +52,8 @@ export default {
 </script>
 
 <style lang='scss' scoped>
-.company{
+
+.card{
   position:relative;
   z-index: 2;
 }
@@ -58,7 +61,20 @@ p{
   font-family: MensuraLight;
   font-weight: 100;
 }
-.btn{
+
+.btn:hover{
+  font-size: .9em;
+  box-shadow: 5px 5px 7px #0000007b;
+
+  transition:ease-in-out .4s;
+}
+.regular{
+    border-radius: 12px;
+    box-shadow: 5px 5px 10px #00000038;
+    border:0px;
+    margin-bottom:3em;
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1) .5s;
+  .btn{
   background-color:$alpha;
   color:$title-dark;
   font-size: .95em;
@@ -66,24 +82,51 @@ p{
   transition:ease-in .2s;
   box-shadow: 5px 5px 10px #00000038;
 }
-.btn:hover{
-  font-size: .9em;
-  box-shadow: 5px 5px 7px #0000007b;
-  transition:ease-in-out .4s;
-}
-.card{
-    border-radius: 12px;
-    box-shadow: 5px 5px 10px #00000038;
-    border:0px;
-    margin-bottom:3em;
-  transition: cubic-bezier(0.075, 0.82, 0.165, 1) .5s;
   h5{
       font-family: MensuraBold;
       border-radius:0px;
       transition:cubic-bezier(0.175, 0.885, 0.32, 1.275) .3s;
     }
 }
-.card:hover{
+.is-fav{
+    border-radius: 12px;
+    box-shadow: 5px 5px 10px $alpha;
+    border:0px;
+    margin-bottom:3em;
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1) .5s;
+  .btn{
+  background-color:$alpha;
+  color:$title-dark;
+  font-size: 1.2em;
+  font-family: MensuraBold;
+  transition:ease-in .2s;
+  box-shadow: 5px 5px 10px #00000038;
+}
+  h5{
+      font-family: MensuraBold;
+      font-size:2.5em;
+      border-radius:0px;
+      transition:cubic-bezier(0.175, 0.885, 0.32, 1.275) .3s;
+    }
+    p{
+      font-size:1.5em;
+    }
+}
+.regular:hover{
+    box-shadow: 5px 5px 15px $alpha;
+    border:0px;
+    margin-bottom:3em;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) .2s;
+    h5{
+      background-color:$alpha;
+      padding: 2%;
+      border-radius:8px;
+      transition:cubic-bezier(0,.92,.78,.63) .2s;
+      @extend .animated !optional;
+      @extend .rubberBand !optional;
+    }
+}
+.is-fav:hover{
     box-shadow: 5px 5px 15px $alpha;
     border:0px;
     margin-bottom:3em;
