@@ -9,21 +9,21 @@
     <div class="row m-0">
       <div
         class="col-md-6 col-sm-6 col-12 m-0"
-        v-for="(company,companyIndex) in favCompanies"
-        :key="companyIndex"
+        v-for="favCompany in favCompanies"
+        :key="favCompany.companyId"
       >
         <websites
           :isFav="true"
-          :company="company"
+          :company="favCompany"
         />
       </div>
       <div
         class="col-md-4 col-sm-5 col-12 text-align-center"
-        v-for="(company,companyIndex) in shaftCompanies"
-        :key="companyIndex"
+        v-for="regularCompany in shaftCompanies"
+        :key="regularCompany.companyId"
       >
         <websites
-          :company="company"
+          :company="regularCompany"
         />
       </div>
     </div>
@@ -36,7 +36,7 @@ import Intersect from 'vue-intersect';
 import websites from '@/components/sections/companies/websites.vue';
 
 export default {
-  name: 'distribuidores',
+  name: 'distribuidoress',
   components: {
     websites,
     Intersect,
