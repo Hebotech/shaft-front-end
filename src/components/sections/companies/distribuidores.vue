@@ -1,6 +1,6 @@
 <template>
 <intersect @enter="enter">
-  <div class="distribuidores">
+  <div class="distribuidores" id="distribuidores">
   <img
     src="@/assets/DONDECOMPRAR.webp"
     alt="donde comprar shaft"
@@ -59,9 +59,7 @@ export default {
 
 <style lang='scss' scoped>
 .distribuidores{
-  // z-index:;
   padding-top:8%;
-  // position:relative;
   background-color:#F7F7F7;
   img{
     position:relative;
