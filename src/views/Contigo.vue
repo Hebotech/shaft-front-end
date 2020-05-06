@@ -9,20 +9,21 @@
         </div>
         <div class="col">
           <h3>
-            ❤️👨🏻‍⚕️🏃🏻‍♂️
+            ❤️👨🏻‍⚕️👮🏻‍♂️🏃🏻‍♂️
           </h3>
           <h5>
-            Personal de la salud y repartidores
+            Personal de la salud, policías y repartidores
           </h5>
           <p>
             SHAFT está contigo en todo el mes de Mayo,
             y es por esto que queremos apoyar a todos los motociclistas que aún
-            están en la calle trabajando. Si eres mensajero,
+            están en la calle trabajando. Si eres mensajero, policía
             repartidor o trabajas en el sector
             salud tendrás un descuento especial del 20% en cualquier producto de la marca 😍.
-            <strong>Presenta tu registro como repartidor y credencial como miembro del
-            sector salud para acceder a este beneficio.
-            “Protege tu vida con un casco certificado, protege tu vida con Shaft"</strong>
+            <strong>Presenta una fotografía vigente o
+              tu registro como repartidor, credencial como miembro del
+            sector salud para acceder a este beneficio
+            <br>Protege tu vida con un casco certificado, protege tu vida con Shaft</strong>
           </p>
         </div>
       </div>
