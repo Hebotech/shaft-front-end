@@ -18,7 +18,7 @@
         />
       </div>
       </div>
-    <div class="row">
+    <div class="row m-0">
       <div
         class="col-md-4 col-sm-5 col-12 text-align-center"
         v-for="regularCompany in shaftCompanies"
