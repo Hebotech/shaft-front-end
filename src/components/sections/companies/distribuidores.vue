@@ -6,7 +6,7 @@
     alt="donde comprar shaft"
     class="w-75 img-fluid mb-3 animated fadeInDown"
   >
-    <div class="row m-0">
+    <div class="row m-0 justify-content-center">
       <div
         class="col-md-6 col-sm-6 col-12 m-0"
         v-for="favCompany in favCompanies"
@@ -17,6 +17,8 @@
           :company="favCompany"
         />
       </div>
+      </div>
+    <div class="row">
       <div
         class="col-md-4 col-sm-5 col-12 text-align-center"
         v-for="regularCompany in shaftCompanies"

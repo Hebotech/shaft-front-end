@@ -28,7 +28,7 @@
         </div>
       </div>
       <div class="cta m-3">
-        <router-link to="/" class="go-to">
+        <router-link to="/" class="go-to" @click="goTo">
           Ver Distribuidores
         </router-link>
       </div>
@@ -41,6 +41,12 @@
 export default {
   name: 'Conmtigo',
   mounted() {
+    this.$ga.event('Contigo oferta', 'view-page', 'Shaft contigo');
+  },
+  methods: {
+    goTo() {
+      this.$ga.event('CTA', 'click', 'from shaft contig');
+    },
   },
 };
 </script>
@@ -60,7 +66,7 @@ a{
 }
 .container-fluid{
   background: $alpha;
-  height: 100vh;
+  min-height: 100vh;
 }
 h3{
   font-size:4em;

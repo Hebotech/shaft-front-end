@@ -28,6 +28,7 @@ div{
     display:flex;
 }
 a{
+    position: fixed;
     color:$title-dark;
     box-shadow: 10px 9.69px 30px rgba(0, 0, 0, 0.365);
     border:0px;
@@ -37,7 +38,6 @@ a{
     background-color:$alpha;
     padding: .3em 2em;
     z-index: 100;
-    position: fixed;
     bottom:3vw;
     // right: 3vw;
 }
