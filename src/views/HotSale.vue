@@ -41,7 +41,7 @@ export default {
       {
         Nombre: 'RideMX',
         website: 'https://www.ridemx.mx',
-        description: 'Dedicados al Mototurismo de Aventura',
+        description: 'Dedicados al Mototurismo de Aventura en México',
         discount: 10,
       },
       {
