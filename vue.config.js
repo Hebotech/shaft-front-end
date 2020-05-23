@@ -2,12 +2,9 @@
 // const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
-    // configureWebpack: {
-    //     plugins: [
-    //         new HtmlWebpackPlugin(),
-    //         new PreloadWebpackPlugin()
-    //     ]
-    // },
+    configureWebpack: {
+        devServer:{historyApiFallback: true}
+    },
     css: {
         loaderOptions: {
             sass: {

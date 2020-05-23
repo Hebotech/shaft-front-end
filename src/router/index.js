@@ -11,20 +11,20 @@ const routes = [
     component: Home,
   },
   {
-    path: '/contigo',
-    name: 'Contigo',
-    component: () => import('../views/Contigo.vue'),
-  },
-  {
     path: '/hot-sale',
     name: 'HotSale',
     component: () => import('../views/HotSale.vue'),
   },
+  {
+    path: '/contigo',
+    name: 'Contigo',
+    component: () => import('../views/Contigo.vue'),
+  },
 ];
 
 const router = new VueRouter({
+  mode: 'history',
   routes,
-  mode:'history',
 });
 
 export default router;

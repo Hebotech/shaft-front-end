@@ -25,7 +25,7 @@
 import BlueThemeCards from '@/components/sections/companies/BlueThemeCards.vue';
 
 export default {
-  name: 'HotSale',
+  name: 'HotSaleView',
   components: {
     BlueThemeCards,
   },
@@ -52,13 +52,13 @@ export default {
       {
         Nombre: 'iMoto Accesorios',
         website: 'https://imotoaccesorios.com.mx/',
-        description: 'iMoto Accesorios Es una Boutique de accesorios premium establecida en la ciudad de México. Lider en su sector del Mercado dentro de México con más de 30 a√±os de experiencia, brindando el servicio más alto para la satisfacci√≥n de nuestros clientes más exigentes',
+        description: 'Brindando el servicio más alto para la satisfacci√≥n de nuestros clientes más exigentes',
         discount: 10,
       },
       {
         Nombre: 'Rino Bodega',
         website: 'https://rinobodega.com',
-        description: 'Amplia gama de productos para ti y tu moto. Hacemos envíos a toda la República con los precios mas competitivos!!',
+        description: '¡Amplia gama de productos para ti y tu moto. Hacemos envíos a toda la República con los precios mas competitivos!',
         discount: 25,
       },
     ],
