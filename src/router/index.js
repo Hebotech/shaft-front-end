@@ -17,14 +17,14 @@ const routes = [
   },
   {
     path: '/hot-sale',
-    name: 'Hot Sale',
+    name: 'HotSale',
     component: () => import('../views/HotSale.vue'),
   },
 ];
 
 const router = new VueRouter({
-    mode:'history',
-    routes,
+  routes,
+  mode:'history',
 });
 
 export default router;

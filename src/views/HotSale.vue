@@ -34,7 +34,7 @@ export default {
       {
         Nombre: 'Motos Df',
         website: 'https://www.motosdf.com.mx',
-        description: 'Dedicados al Mototurismo de Aventura',
+        description: 'Los mejores productos y precios los encuentras en MOTOS DF',
         discount: 20,
       },
       {
@@ -46,13 +46,19 @@ export default {
       {
         Nombre: 'Bajaj Atizapan',
         website: 'https://planarbys.com',
-        description: 'Dedicados al Mototurismo de Aventura',
+        description: 'Todos los tipos de Motocicletas Bajaj: Carabela, treck, islo. Pagos contado o financiamiento',
+        discount: 10,
+      },
+      {
+        Nombre: 'iMoto Accesorios',
+        website: 'https://imotoaccesorios.com.mx/',
+        description: 'iMoto Accesorios Es una Boutique de accesorios premium establecida en la ciudad de México. Lider en su sector del Mercado dentro de México con más de 30 a√±os de experiencia, brindando el servicio más alto para la satisfacci√≥n de nuestros clientes más exigentes',
         discount: 10,
       },
       {
         Nombre: 'Rino Bodega',
         website: 'https://rinobodega.com',
-        description: 'Dedicados al Mototurismo de Aventura',
+        description: 'Amplia gama de productos para ti y tu moto. Hacemos envíos a toda la República con los precios mas competitivos!!',
         discount: 25,
       },
     ],
