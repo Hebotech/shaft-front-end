@@ -3,15 +3,16 @@
     class="hot-sale container-fluid"
     :style="{'background-image': 'url('+require('@/assets/hot-sale/background.svg')+')'}"
   >
-  <img class="img-fluid w-75 mb-3" src="/hot-sale/logo.png" alt="">
+  <img class="img-fluid w-75 mb-3 mt-3" src="@/assets/brand/logo.png" alt="">
+  <img class="img-fluid w-75 mb-3" src="@/assets/hot-sale/logo.png" alt="">
   <h1 class="mb-5">
     Tiendas oficiales
   </h1>
-  <div class="row m-0">
+  <div class="row m-0 justify-content-center align-items-stretch">
     <div
       v-for="(store, storeIndex) in stores"
       :key="storeIndex"
-      class="col-12 mb-5 col-md-6"
+      class="col-12 mb-5 col-md-6 mt-md-5"
     >
       <blue-theme-cards
         v-bind="store"
@@ -52,7 +53,7 @@ export default {
       {
         Nombre: 'iMoto Accesorios',
         website: 'https://imotoaccesorios.com.mx/',
-        description: 'Brindando el servicio más alto para la satisfacci√≥n de nuestros clientes más exigentes',
+        description: 'Brindando el servicio más alto para la satisfacción de nuestros clientes más exigentes',
         discount: 10,
       },
       {

@@ -31,7 +31,7 @@
 
 <script>
 export default {
-  name: 'StoreCard',
+  name: 'StoreCardHotSale',
   components: {
   },
   props: {
