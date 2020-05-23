@@ -1,0 +1,84 @@
+<template>
+  <div
+    class="hot-sale container-fluid"
+    :style="{'background-image': 'url('+require('@/assets/hot-sale/background.svg')+')'}"
+  >
+  <img class="img-fluid w-75 mb-3" src="/hot-sale/logo.png" alt="">
+  <h1 class="mb-5">
+    Tiendas oficiales
+  </h1>
+  <div class="row m-0">
+    <div
+      v-for="(store, storeIndex) in stores"
+      :key="storeIndex"
+      class="col-12 mb-5 col-md-6"
+    >
+      <blue-theme-cards
+        v-bind="store"
+      />
+    </div>
+  </div>
+  </div>
+</template>
+
+<script>
+import BlueThemeCards from '@/components/sections/companies/BlueThemeCards.vue';
+
+export default {
+  name: 'HotSale',
+  components: {
+    BlueThemeCards,
+  },
+  data: () => ({
+    stores: [
+      {
+        Nombre: 'Motos Df',
+        website: 'https://www.motosdf.com.mx',
+        description: 'Dedicados al Mototurismo de Aventura',
+        discount: 20,
+      },
+      {
+        Nombre: 'RideMX',
+        website: 'https://www.ridemx.mx',
+        description: 'Dedicados al Mototurismo de Aventura',
+        discount: 10,
+      },
+      {
+        Nombre: 'Bajaj Atizapan',
+        website: 'https://planarbys.com',
+        description: 'Dedicados al Mototurismo de Aventura',
+        discount: 10,
+      },
+      {
+        Nombre: 'Rino Bodega',
+        website: 'https://rinobodega.com',
+        description: 'Dedicados al Mototurismo de Aventura',
+        discount: 25,
+      },
+    ],
+  }),
+};
+</script>
+
+<style lang="scss">
+.hot-sale {
+  h1{
+    color: $alpha;
+    font-family: Shaft-H1;
+    font-size: 5em;
+  }
+  min-height: 100vh;
+  background-color: #253A5F;
+  background-size: contain;
+}
+@media  (min-width: 1100px) {
+  .hot-sale{
+    img{
+      max-width: 20%;
+    }
+    font-size: 2em;
+    background-size: cover;
+    background-position-y: -900px;
+  }
+}
+</style>

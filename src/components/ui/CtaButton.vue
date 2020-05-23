@@ -1,10 +1,10 @@
 <template>
-<div>
+<div class="row m-0 justify-content-center">
     <a
-        @click='addNewClick()'
-        class="animated tada delay-2s"
-        target="_blank"
-        href="https://irvingdev.typeform.com/to/wXtpWP"
+      @click="addNewClick({ category: 'Leads', tag: 'CTA Formulario' })"
+      class="animated tada delay-2s cta text-center"
+      target="_blank"
+      href="https://irvingdev.typeform.com/to/wXtpWP"
     >
         Vende Shaft
     </a>
@@ -15,19 +15,15 @@
 export default {
   name: 'CtaButton',
   methods: {
-    addNewClick() {
-      this.$ga.event('Leads', 'click', 'CTA Formulario');
+    addNewClick({ category, tag }) {
+      this.$ga.event(category, 'click', tag);
     },
   },
 };
 </script>
 
 <style lang='scss' scoped>
-div{
-    justify-content: center;
-    display:flex;
-}
-a{
+.cta{
     position: fixed;
     color:$title-dark;
     box-shadow: 10px 9.69px 30px rgba(0, 0, 0, 0.365);

@@ -41,7 +41,7 @@
 export default {
   name: 'Conmtigo',
   mounted() {
-    this.$ga.event('Contigo oferta', 'view-page', 'Shaft contigo');
+    this.$ga.event('Shaft Contigo', 'view-page', 'Shaft contigo');
   },
   methods: {
     goTo() {

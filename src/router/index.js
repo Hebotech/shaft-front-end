@@ -15,6 +15,11 @@ const routes = [
     name: 'Contigo',
     component: () => import('../views/Contigo.vue'),
   },
+  {
+    path: '/hot-sale',
+    name: 'Hot Sale',
+    component: () => import('../views/HotSale.vue'),
+  },
 ];
 
 const router = new VueRouter({
