@@ -42,7 +42,7 @@ export default {
   },
   methods: {
     addNewClick() {
-      this.$ga.event('Hot sale', 'click', `${this.name}`);
+      this.$ga.event('Hot sale', 'click', `${this.Nombre}`);
     },
   },
 };
