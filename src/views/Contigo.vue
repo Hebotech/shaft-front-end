@@ -15,7 +15,7 @@
             Personal de la salud, policías y repartidores
           </h5>
           <p>
-            SHAFT está contigo en todo el mes de Mayo,
+            SHAFT está contigo en todo el mes de Junio,
             y es por esto que queremos apoyar a todos los motociclistas que aún
             están en la calle trabajando. Si eres mensajero, policía
             repartidor o trabajas en el sector

@@ -1,7 +1,6 @@
 <template>
 <div
   class="container-fluid"
-  :style="{'background-image': 'url('+require('@/assets/hot-sale/background.svg')+')'}"
 >
   <!-- :style="{'background-image': 'url('+require('@/assets/bg-hero-header.webp')+')'}" -->
   <div
@@ -12,23 +11,9 @@
       justify-content-center
     "
   >
-      <!-- <h1>
-        Bienvenido a la nueva<br>
-         experiencia
-      </h1> -->
-      <img
-        src="@/assets/hot-sale/logo.png"
-        alt="shaft mexico"
-        width="500px"
-        class="img-fluid w-25"
-      >
-      <h1>Los mejores descuentos llegaron</h1>
-      <img
-        src="@/assets/brand/logo.webp"
-        alt="shaft mexico"
-        width="500px"
-        class="img-fluid text-center w-25 mt-3 logo"
-      >
+      <h2>Todo Junio</h2>
+      <h1>Shaft Contigo</h1>
+      <h2>20% OFF</h2>
       <!-- <div class="bg-bottom">
         <img
           alt="shaft mexico"
@@ -36,6 +21,17 @@
           class="img-fluid"
         >
       </div> -->
+      <img
+        src="@/assets/brand/logo.webp"
+        alt="shaft mexico"
+        width="500px"
+        class="img-fluid text-center w-25 mt-3 logo"
+      >
+    <img
+      src="@/assets/bg-image-hero.png"
+      alt=""
+      class="img-fluid w-100 hero-header-image"
+    >
   </div>
 </div>
 </template>
@@ -47,11 +43,15 @@ export default {
 </script>
 
 <style lang='scss' scoped>
+h2{
+  font-family: mensurabold;
+  font-size: 4em;
+}
 h1{
   font-family: shaft-h1;
   // color:#333;
-  color:$alpha;
-  font-size:6em;
+  color:#253A5F;
+  font-size:5em;
   text-anchor: middle;
   display:inline-block;
   z-index:2;
@@ -65,7 +65,7 @@ h1{
 }
 .container-fluid{
   // background-color: $beta;
-  background-color: #253A5F;
+  background-color: $alpha;
   overflow: hidden;
   height: 100vh;
   background-size:cover;
