@@ -15,7 +15,6 @@ export default {
   components: {
     HeroHeader: () => import('@/components/sections/HeroHeader.vue'),
     ProductExperience: () => import('@/components/sections/ProductExperience.vue'),
-    ContactForm: () => import('@/components/sections/Form.vue'),
     Distribuidores: () => import('@/components/sections/companies/distribuidores.vue'),
     CtaButton: () => import('@/components/ui/CtaButton.vue'),
     Splash: () => import('@/components/ui/Splash.vue'),
