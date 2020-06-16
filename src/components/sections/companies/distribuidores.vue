@@ -35,7 +35,7 @@
 
 <script>
 import Intersect from 'vue-intersect';
-import websites from '@/components/sections/companies/websites.vue';
+import websites from '@/components/ui/companies/websites.vue';
 
 export default {
   name: 'distribuidoress',

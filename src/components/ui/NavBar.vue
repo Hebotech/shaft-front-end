@@ -5,7 +5,7 @@
         src="@/assets/brand/logo.png"
         width="150px"
         class="d-inline-block align-top img-fluid"
-        alt=""
+        alt="splash-Shaft image"
     >
   </a>
 </nav>

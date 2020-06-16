@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import BlueThemeCards from '@/components/sections/companies/BlueThemeCards.vue';
+import BlueThemeCards from '@/components/_reuse_/components/BlueThemeCards.vue';
 
 export default {
   name: 'HotSaleView',

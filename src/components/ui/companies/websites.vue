@@ -18,7 +18,7 @@
           :href="`http://${company.properties.website.value}`"
           class="btn border-0 animated fadeInDown slower "
           target="_blank"
-          @click='addNewClick(company.companyId)'
+          @click='addNewClick()'
         >
           Ver sitio web
         </a>
@@ -39,13 +39,8 @@ export default {
     isFav: Boolean,
   },
   methods: {
-    addNewClick(id) {
+    addNewClick() {
       this.$ga.event('Distribuidores', 'click', `${this.company.properties.name.value}`);
-      if (this.company.properties.clics_de_hebotech.value === undefined) {
-        this.$store.dispatch('clickCounter', id, this.company.properties.clics_de_hebotech.value);
-      } else {
-        this.$store.dispatch('clickCounter', id);
-      }
     },
   },
 };

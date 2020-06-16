@@ -3,7 +3,9 @@
 
 module.exports = {
     configureWebpack: {
-        devServer:{historyApiFallback: true}
+        devServer:{
+            historyApiFallback: true
+        }
     },
     css: {
         loaderOptions: {

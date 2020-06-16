@@ -1,7 +1,7 @@
 <template>
 <div class="row m-0 justify-content-center">
     <a
-      @click="addNewClick({ category: 'Contigo', tag: 'CTA Home' })"
+      @click="ctaAction({ category: 'Contigo', tag: 'CTA Home' })"
       class="animated tada delay-2s cta text-center"
     >
       <!-- target="_blank" -->
@@ -15,7 +15,7 @@
 export default {
   name: 'CtaButton',
   methods: {
-    addNewClick({ category, tag }) {
+    ctaAction({ category, tag }) {
       this.$router.push({
         name: 'Contigo',
       });
