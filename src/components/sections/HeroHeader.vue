@@ -14,7 +14,6 @@
       <h2>Próxima semana</h2>
       <h1 class="animate__animated
       animate__zoomInDown" >NUEVA TEMPORADA</h1>
-      <h2>¿Estás listo?</h2>
       <div class="bg-bottom">
         <!-- <img
           alt="shaft mexico"
