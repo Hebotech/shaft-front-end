@@ -11,21 +11,22 @@
       justify-content-center
     "
   >
-      <h2>Todo Junio</h2>
-      <h1>Shaft Contigo</h1>
-      <h2>20% OFF</h2>
-      <!-- <div class="bg-bottom">
-        <img
+      <h2>Próxima semana</h2>
+      <h1 class="animate__animated
+      animate__zoomInDown" >NUEVA TEMPORADA</h1>
+      <h2>¿Estás listo?</h2>
+      <div class="bg-bottom">
+        <!-- <img
           alt="shaft mexico"
           src="@/assets/header-bottom.webp"
           class="img-fluid"
-        >
-      </div> -->
+        > -->
+      </div>
       <img
         src="@/assets/brand/logo.webp"
         alt="shaft mexico"
         width="500px"
-        class="img-fluid text-center w-25 mt-3 logo"
+        class="img-fluid text-center w-25 mt-3 logo  animate__zoomInUp animate__animated"
       >
     <img
       src="@/assets/bg-image-hero.png"
@@ -46,11 +47,13 @@ export default {
 h2{
   font-family: mensurabold;
   font-size: 4em;
+  color:$alpha;
+
 }
 h1{
   font-family: shaft-h1;
   // color:#333;
-  color:#253A5F;
+  color:$alpha;
   font-size:5em;
   text-anchor: middle;
   display:inline-block;
@@ -65,7 +68,7 @@ h1{
 }
 .container-fluid{
   // background-color: $beta;
-  background-color: $alpha;
+  background-color: #253A5F;
   overflow: hidden;
   height: 100vh;
   background-size:cover;

@@ -2,7 +2,7 @@
 <div>
   <transition
     mode="out-in"
-    enter-active-class="animated zoomIn faster"
+    enter-active-class="animated animate__slideInUp animate__animated"
     before-leave-class="animated zoomOutDown"
     leave-class="animated zoomOutDown"
   >
