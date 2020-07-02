@@ -69,10 +69,10 @@ export default {
       fontColor: [
         'white',
         'white',
-        '#333333',
+        'white',
         'white',
         '#333333',
-        'white',
+        '#121211',
         'white',
         'white',
       ],

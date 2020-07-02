@@ -15,7 +15,7 @@
     <slot v-if="!activeProduct"></slot>
     <div
       v-else
-      :style="{'background-color': `${activeProduct.color}`}"
+      :style="{'background-image': `url(${activeProduct.color})`}"
       class="bg-svg"
     ></div>
   </transition>
@@ -81,6 +81,7 @@ h1{
   mask-image: url('~@/assets/bg-product.svg');
   mask-size: contain;
   mask-position: right;
+  mask-clip: 0px;
   mask-repeat: no-repeat;
   background-size: cover;
 }
