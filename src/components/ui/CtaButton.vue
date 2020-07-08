@@ -1,14 +1,13 @@
 <template>
-<div class="row m-0 justify-content-center">
-    <a
+  <div class="row m-0 justify-content-center">
+    <router-link
       @click="ctaAction({ category: 'Contigo', tag: 'CTA Home' })"
-      href="https://irvingdev.typeform.com/to/wXtpWP"
       class="animate__animated animate__wobble animate__delay-2s cta text-center"
-      target="_blank"
+      to="/nuevo-distribuidor"
     >
-     ¡Distribuye Shaft!
-    </a>
-</div>
+      ¡Distribuye Shaft!
+    </router-link>
+  </div>
 </template>
 
 <script>
@@ -22,27 +21,27 @@ export default {
 };
 </script>
 
-<style lang='scss' scoped>
-.cta{
-    position: fixed;
-    color: #253A5F;
-    box-shadow: 10px 9.69px 30px rgba(0, 0, 0, 0.365);
-    border:0px;
-    font-family: MensuraBold;
-    border-radius:8px;
-    font-size: 1.5em;
-    background-color:$alpha;
-    // background-color:#253A5F;
-    padding: .3em 2em;
-    z-index: 100;
-    bottom:3vw;
-  transition:cubic-bezier(0.075, 0.82, 0.165, 1) 3s;
-    // right: 3vw;
+<style lang="scss" scoped>
+.cta {
+  position: fixed;
+  color: #253a5f;
+  box-shadow: 10px 9.69px 30px rgba(0, 0, 0, 0.365);
+  border: 0px;
+  font-family: MensuraBold;
+  border-radius: 8px;
+  font-size: 1.5em;
+  background-color: $alpha;
+  // background-color:#253A5F;
+  padding: 0.3em 2em;
+  z-index: 100;
+  bottom: 3vw;
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1) 3s;
+  // right: 3vw;
 }
-.cta:hover{
+.cta:hover {
   text-decoration: underline;
-  transition:cubic-bezier(0.075, 0.82, 0.165, 1) .7s;
-  color:black;
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.7s;
+  color: black;
   box-shadow: 10px 9.69px 25px rgba(0, 0, 0, 0.755);
   cursor: pointer;
 }

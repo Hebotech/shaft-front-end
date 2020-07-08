@@ -1,5 +1,6 @@
 <template>
-<div class="
+  <div
+    class="
   description
   order-3
   order-sm-3
@@ -8,55 +9,34 @@
   col-sm-12
   text-md-right
   "
->
-  <h3
-  :style="{'color': `${fontColor[activeProduct.index]}`}"
   >
-    {{activeProduct.model}}
-  </h3>
-  <div
-    class="
+    <h3 :style="{ color: `${fontColor[activeProduct.index]}` }">
+      {{ activeProduct.model }}
+    </h3>
+    <div
+      class="
       mr-3
       ml-3
       arrows-container
       justify-content-around
       justify-content-md-end
     "
-    :style="{'color': `${fontColor[activeProduct.index]}`}"
-  >
-    <div
-      class="arrowContainer d-md-none"
-      @click="lastProduct"
+      :style="{ color: `${fontColor[activeProduct.index]}` }"
     >
-      <fontawesome
-        class="animated fadeInRight fa fa-arrow-down"
-      />
-    </div>
-    <div
-      class="arrowContainer"
-      @click="lastImage"
-    >
-        <fontawesome
-          class="animated fadeInLeft mr-md-3 fa fa-arrow-left"
-        />
+      <div class="arrowContainer d-md-none" @click="lastProduct">
+        <fontawesome class="animated fadeInRight fa fa-arrow-down" />
       </div>
-    <div class="arrowContainer"
-      @click="nextImage"
-    >
-       <fontawesome
-        class="animated fadeInRight ml-md-3 fa fa-arrow-right"
-      />
-    </div>
-    <div
-      class="arrowContainer d-md-none"
-      @click="lastProduct"
-    >
-      <fontawesome
-        class="animated fadeInRight fa fa-arrow-up"
-      />
+      <div class="arrowContainer" @click="lastImage">
+        <fontawesome class="animated fadeInLeft mr-md-3 fa fa-arrow-left" />
+      </div>
+      <div class="arrowContainer" @click="nextImage">
+        <fontawesome class="animated fadeInRight ml-md-3 fa fa-arrow-right" />
+      </div>
+      <div class="arrowContainer d-md-none" @click="lastProduct">
+        <fontawesome class="animated fadeInRight fa fa-arrow-up" />
+      </div>
     </div>
   </div>
-</div>
 </template>
 
 <script>
@@ -66,16 +46,7 @@ export default {
   name: 'ProductDescription',
   data() {
     return {
-      fontColor: [
-        'white',
-        'white',
-        'white',
-        'white',
-        '#333333',
-        '#121211',
-        'white',
-        'white',
-      ],
+      fontColor: ['white', 'white', 'white', 'white', '#333333', '#121211', 'white', 'white'],
     };
   },
   mixins: [productHelmetMixin],
@@ -104,32 +75,34 @@ export default {
 };
 </script>
 
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 @media (max-width: 768px) {
-  *{color:#333!important;}
-  h3{
-    font-size:3em!important;
+  * {
+    color: #333 !important;
   }
-  p{
-    font-size:1em!important;
+  h3 {
+    font-size: 3em !important;
+  }
+  p {
+    font-size: 1em !important;
   }
 }
-h3{
+h3 {
   @extend .h4-font;
-  font-size:5em;
-  color:white;
+  font-size: 5em;
+  color: white;
 }
-.arrows-container{
+.arrows-container {
   @extend .h6-font;
   font-stretch: expanded;
-  font-size:3em;
-  display:flex;
-  justify-content:flex-end;
+  font-size: 3em;
+  display: flex;
+  justify-content: flex-end;
 }
-.arrowContainer:hover{
-  cursor:pointer!important;
+.arrowContainer:hover {
+  cursor: pointer !important;
 }
-.description{
+.description {
   display: flex;
   flex-direction: column;
   justify-content: center;

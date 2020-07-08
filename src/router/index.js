@@ -11,9 +11,9 @@ const routes = [
     component: Home,
   },
   {
-    path: '/contigo',
-    name: 'Contigo',
-    component: () => import('../views/Contigo.vue'),
+    path: '/nuevo-distribuidor',
+    name: 'Distribuye Shaft',
+    component: () => import('../views/Distribuidor.vue'),
   },
 ];
 
