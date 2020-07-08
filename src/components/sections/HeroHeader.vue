@@ -1,35 +1,23 @@
 <template>
   <div class="container-fluid">
     <!-- :style="{'background-image': 'url('+require('@/assets/bg-hero-header.webp')+')'}" -->
-    <div
-      class="
-      d-flex
-      flex-column
-      align-items-center
-      justify-content-center
-    "
-    >
+    <div class="d-flex flex-column align-items-center justify-content-center">
       <h2>Nueva colección disponible 👇🏻</h2>
-      <h1
-        class="animate__animated
-      animate__zoomInDown"
-      >
-        NUEVA TEMPORADA
-      </h1>
+      <h1 class="animate__animated animate__zoomInDown">NUEVA TEMPORADA</h1>
       <div class="bg-bottom">
         <!-- <img
           alt="shaft mexico"
           src="@/assets/header-bottom.webp"
           class="img-fluid"
-        > -->
+        >-->
       </div>
       <img
         src="@/assets/brand/logo.webp"
         alt="shaft mexico"
         width="500px"
-        class="img-fluid text-center w-25 mt-3 logo  animate__zoomInUp animate__animated"
+        class="img-fluid text-center w-25 mt-3 logo animate__zoomInUp animate__animated"
       />
-      <img src="@/assets/bg-image-hero.png" alt="" class="img-fluid w-100 hero-header-image" />
+      <img src="@/assets/bg-image-hero.png" alt class="img-fluid w-100 hero-header-image" />
     </div>
   </div>
 </template>
@@ -57,7 +45,7 @@ h1 {
 }
 .logo {
   filter: drop-shadow(14px 5px 7px rgba(0, 0, 0, 0.3));
-  z-index: 2;
+  z-index: 5;
 }
 .pt {
   z-index: 2;
