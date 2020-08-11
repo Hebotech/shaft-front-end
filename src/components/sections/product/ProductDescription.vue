@@ -46,7 +46,7 @@ export default {
   name: 'ProductDescription',
   data() {
     return {
-      fontColor: ['white', 'white', 'white', 'white', '#333333', '#121211', 'white', 'white'],
+      fontColor: ['white', 'white', 'white', 'white', 'black', 'black', 'white', '#333'],
     };
   },
   mixins: [productHelmetMixin],

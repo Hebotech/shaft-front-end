@@ -1,11 +1,11 @@
 <template>
   <div class="home">
-    <hero-header/>
-    <cta-button/>
-    <product-experience/>
-    <distribuidores/>
-    <splash/>
-    <contact-form/>
+    <hero-header />
+    <cta-button />
+    <product-experience />
+    <distribuidores />
+    <splash />
+    <contact-form />
   </div>
 </template>
 
@@ -20,15 +20,22 @@ export default {
     Splash: () => import('@/components/ui/Splash.vue'),
   },
   mounted() {
-    window.addEventListener('keydown', (e) => {
-      if ([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
-        e.preventDefault();
-      }
-    }, false);
+    window.addEventListener(
+      'keydown',
+      // eslint-disable-next-line arrow-parens
+      e => {
+        if ([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
+          e.preventDefault();
+        }
+      },
+      false,
+    );
   },
 };
 </script>
 
 <style lang="scss" scoped>
-
+.home {
+  overflow-x: hidden;
+}
 </style>

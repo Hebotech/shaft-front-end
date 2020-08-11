@@ -1,13 +1,12 @@
 <template>
-          <!-- v-for="(product, productIndex) in products"
+  <!-- v-for="(product, productIndex) in products"
           :key="productIndex" -->
-<div
-    class="non-active-products animated FadeInUp"
-    :class="{activing:active}"
+  <div
+    class="non-active-products animated FadeInRight"
+    :class="{ activing: active }"
     :style="`background-image:url(${images[0]})`"
     @click="setActiveProduct(productIndex)"
->
-</div>
+  ></div>
 </template>
 
 <script>
@@ -19,6 +18,7 @@ export default {
     active: Boolean,
     name: String,
   },
+
   methods: {
     async setActiveProduct(index) {
       await this.$store.commit('DEACTIVATE_PRODUCTS');
@@ -29,6 +29,4 @@ export default {
 };
 </script>
 
-<style lang='scss' scoped>
-
-</style>
+<style lang="scss" scoped></style>
