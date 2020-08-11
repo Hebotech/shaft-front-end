@@ -1,13 +1,13 @@
 /* eslint-disable no-var */
 <template>
-  <div class="">
+  <main class="distribuidor">
     <div
-      class="typeform-widget animate__fadeInDown animate__animated "
+      class="typeform-widget animate__fadeInDown animate__animated"
       data-url="https://form.typeform.com/to/wXtpWP"
       data-transparency="100"
       style="width: 100%; height: 500px;"
     ></div>
-  </div>
+  </main>
 </template>
 
 <script>
@@ -39,7 +39,12 @@ export default {
 
 <style lang="scss" scoped>
 * {
-  min-height: 100vh;
   background-color: #253a5f;
+}
+.typeform-widget {
+  max-height: 50vh;
+}
+.distribuidor {
+  min-height: 100vh;
 }
 </style>
