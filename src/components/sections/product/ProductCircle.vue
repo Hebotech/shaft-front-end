@@ -1,28 +1,24 @@
 <template>
-<div class="
+  <div
+    class="
   bg-circle
-  col-md-7
-  col-sm-10
+  col-md-12
   col-12
   mb-3
   mt-3
   d-flex
-  flex-row-reverse
-  justify-content-between
-  items-center
-  order-1
-  order-sm-1
-  order-md-2
-  order-xl-2
+  justify-content-center
+  flex-column
+  align-items-center
+  order-2
+  order-lg-2
 "
->
-  <main-product
-    :counter="counter"
-  />
-  <div class="products-around">
-    <non-active-products/>
+  >
+    <main-product :counter="counter" />
+    <div class="products-around">
+      <non-active-products />
+    </div>
   </div>
-</div>
 </template>
 
 <script>
@@ -38,7 +34,7 @@ export default {
   },
   mixins: [productHelmetMixin],
   mounted() {
-    window.addEventListener('keyup', (event) => {
+    window.addEventListener('keyup', event => {
       switch (event.keyCode) {
         case 37:
           this.lastImage();
@@ -59,6 +55,4 @@ export default {
 };
 </script>
 
-<style lang='scss' scoped>
-
-</style>
+<style lang="scss" scoped></style>

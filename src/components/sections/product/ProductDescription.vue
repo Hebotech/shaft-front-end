@@ -5,12 +5,14 @@
   order-3
   order-sm-3
   order-md-3
-  col-md-3
-  col-sm-12
+  col-md-4
+  col-12
   text-md-right
+  align-self-end
   "
   >
-    <h3 :style="{ color: `${fontColor[activeProduct.index]}` }">
+    <!-- :style="{ color: `${fontColor[activeProduct.index]}` }" -->
+    <h3>
       {{ activeProduct.model }}
     </h3>
     <div
@@ -21,8 +23,8 @@
       justify-content-around
       justify-content-md-end
     "
-      :style="{ color: `${fontColor[activeProduct.index]}` }"
     >
+      <!-- :style="{ color: `${fontColor[activeProduct.index]}` }" -->
       <div class="arrowContainer d-md-none" @click="lastProduct">
         <fontawesome class="animated fadeInRight fa fa-arrow-down" />
       </div>
@@ -76,21 +78,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@media (max-width: 768px) {
-  * {
-    color: #333 !important;
-  }
-  h3 {
-    font-size: 3em !important;
-  }
-  p {
-    font-size: 1em !important;
-  }
+.description {
+  color: #e9e2e2;
+  margin-top: -10em;
+  margin-bottom: 5em;
 }
+
 h3 {
   @extend .h4-font;
-  font-size: 5em;
-  color: white;
+  font-size: 4em;
 }
 .arrows-container {
   @extend .h6-font;
@@ -106,5 +102,17 @@ h3 {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+@media (max-width: 768px) {
+  * {
+    color: #e9e2e2;
+  }
+  h3 {
+    font-size: 3em;
+    margin-top: 3em;
+  }
+  p {
+    font-size: 1em;
+  }
 }
 </style>

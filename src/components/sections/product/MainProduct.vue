@@ -2,9 +2,8 @@
   <div>
     <transition
       mode="out-in"
-      enter-active-class="animated animate__slideInRight animate__animated"
-      before-leave-class="animated zoomOutDown"
-      leave-class="animated zoomOutDown"
+      enter-active-class="animated animate__backInRight animate__animated"
+      leave-active-class="animate__animated animated animate__backOutLeft"
     >
       <slot v-if="!activeProduct"></slot>
       <img
@@ -28,17 +27,26 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.main-product {
+  background-position: center;
+  background-size: contain;
+  align-content: center;
+  background-attachment: scroll;
+  height: 580px;
+  width: 580px;
+  filter: drop-shadow(4px 9.69px 20px rgba(0, 0, 0, 0.452));
+}
 @media (max-width: 576px) {
   .main-product {
-    height: 250px !important;
-    width: 250px !important;
+    height: 250px;
+    width: 250px;
   }
   .circle {
     position: absolute;
-    top: 10% !important;
-    left: 15% !important;
-    width: 0px !important;
-    height: 0px !important;
+    top: 10%;
+    left: 15%;
+    width: 0px;
+    height: 0px;
     align-self: center;
     padding: 35%;
   }
@@ -48,20 +56,11 @@ export default {
 }
 @media (max-width: 768px) {
   .main-product {
-    height: 250px !important;
-    width: 250px !important;
+    height: 250px;
+    width: 250px;
   }
   img {
-    max-width: 90% !important;
+    max-width: 90%;
   }
-}
-.main-product {
-  background-position: center !important;
-  background-size: contain;
-  align-content: center;
-  background-attachment: scroll;
-  height: 600px;
-  width: 600px;
-  filter: drop-shadow(4px 9.69px 20px rgba(0, 0, 0, 0.2));
 }
 </style>

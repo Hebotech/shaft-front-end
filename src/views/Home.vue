@@ -4,8 +4,6 @@
     <cta-button />
     <product-experience />
     <distribuidores />
-    <splash />
-    <contact-form />
   </div>
 </template>
 
@@ -17,7 +15,6 @@ export default {
     ProductExperience: () => import('@/components/sections/ProductExperience.vue'),
     Distribuidores: () => import('@/components/sections/companies/distribuidores.vue'),
     CtaButton: () => import('@/components/ui/CtaButton.vue'),
-    Splash: () => import('@/components/ui/Splash.vue'),
   },
   mounted() {
     window.addEventListener(

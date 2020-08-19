@@ -1,8 +1,8 @@
 <template>
-  <div class="row m-0 justify-content-center">
+  <div class="row m-0 justify-content-center justify-content-lg-start pl-lg-4">
     <router-link
       @click="ctaAction({ category: 'Contigo', tag: 'CTA Home' })"
-      class="animate__animated animate__wobble animate__delay-2s cta text-center"
+      class="animate__animated animate__wobble animate__delay-2s cta text-center "
       to="/nuevo-distribuidor"
     >
       ¡Distribuye Shaft!
@@ -34,7 +34,7 @@ export default {
   // background-color:#253A5F;
   padding: 0.3em 2em;
   z-index: 100;
-  bottom: 3vw;
+  bottom: 1.5vw;
   transition: cubic-bezier(0.075, 0.82, 0.165, 1) 3s;
   // right: 3vw;
 }

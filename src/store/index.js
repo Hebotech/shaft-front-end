@@ -13,10 +13,24 @@ export default new Vuex.Store({
     counter: 0,
     products: [
       {
+        name: 'Devide',
+        color: '../bgs/9.png',
+        description: 'Ésta es la súper descripción del producto 3',
+        active: true,
+        model: 'SH-581',
+        certificates: ['../certificates/3.png', '../certificates/1.png', '../certificates/2.png'],
+        images: [
+          '../products/SH-581/devide/1.png',
+          '../products/SH-581/devide/2.png',
+          '../products/SH-581/devide/3.png',
+        ],
+        index: 0,
+      },
+      {
         name: 'Billy',
         color: '../bgs/4.png',
         description: 'Ésta es la súper descripción del producto 1',
-        active: true,
+        active: false,
         model: 'SH-581',
         certificates: [
           'https://shafthelmets.com/wp-content/uploads/2016/08/3-2-300x300.png',
@@ -29,7 +43,7 @@ export default new Vuex.Store({
           '../products/SH-581/billy/3.png',
           '../products/SH-581/billy/4.png',
         ],
-        index: 0,
+        index: 1,
       },
       {
         name: 'Coxmos',
@@ -51,22 +65,9 @@ export default new Vuex.Store({
           '../products/SH-581/coxmos/7.png',
           '../products/SH-581/coxmos/8.png',
         ],
-        index: 1,
-      },
-      {
-        name: 'Devide',
-        color: '../bgs/9.png',
-        description: 'Ésta es la súper descripción del producto 3',
-        active: false,
-        model: 'SH-581',
-        certificates: ['../certificates/3.png', '../certificates/1.png', '../certificates/2.png'],
-        images: [
-          '../products/SH-581/devide/1.png',
-          '../products/SH-581/devide/2.png',
-          '../products/SH-581/devide/3.png',
-        ],
         index: 2,
       },
+
       {
         name: 'Rebel',
         color: '../bgs/10.png',
@@ -153,6 +154,8 @@ export default new Vuex.Store({
     ],
   },
   getters: {
+    firstProduct: state => state.products[2].images[0],
+
     nonActiveProducts: state => {
       return state.products.filter(product => product.active === false);
     },

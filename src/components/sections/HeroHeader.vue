@@ -1,60 +1,98 @@
 <template>
-  <div class="container-fluid">
-    <!-- :style="{'background-image': 'url('+require('@/assets/bg-hero-header.webp')+')'}" -->
-    <div class="d-flex flex-column align-items-center justify-content-center">
-      <h2>Nueva colección disponible 👇🏻</h2>
-      <h1 class="animate__animated animate__zoomInDown">NUEVA TEMPORADA</h1>
-      <div class="bg-bottom">
-        <!-- <img
-          alt="shaft mexico"
-          src="@/assets/header-bottom.webp"
-          class="img-fluid"
-        >-->
-      </div>
+  <div
+    class="container-fluid align-items-center d-flex flex-column justify-content-center"
+    :style="{ 'background-image': 'url(' + require('@/assets/bg-header.svg') + ')' }"
+  >
+    <div class="intro-website align-self-center d-flex flex-column align-items-center ">
+      <h2>Nueva colección</h2>
+      <h1 class="animate__animated animate__zoomInDown">Descubrela ahora</h1>
       <img
-        src="@/assets/brand/logo.webp"
+        src="@/assets/shaft-logo.svg"
         alt="shaft mexico"
         width="500px"
-        class="img-fluid text-center w-25 mt-3 logo animate__zoomInUp animate__animated"
+        class="img-fluid text-center d-block w-25 mt-3 logo animate__zoomInUp animate__animated"
       />
-      <img src="@/assets/bg-image-hero.png" alt class="img-fluid w-100 hero-header-image" />
     </div>
+    <img class="feature-product img-fluid" :src="featureHelmet" alt="newHewlmet" />
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
 export default {
   name: 'HeroHeader',
+
+  computed: {
+    ...mapGetters({
+      featureHelmet: 'firstProduct',
+    }),
+  },
 };
 </script>
 
 <style lang="scss" scoped>
-h2 {
-  font-family: mensurabold;
-  font-size: 4em;
-  color: $alpha;
+.feature-product {
+  position: relative;
+  max-height: 40em;
+  margin-top: -80%;
+  right: -50%;
+  z-index: 0;
+  @media screen and (min-width: 800px) {
+    max-height: 40em;
+    margin-top: -30%;
+    right: -50%;
+  }
 }
-h1 {
-  font-family: shaft-h1;
-  // color:#333;
-  color: $alpha;
-  font-size: 5em;
-  text-anchor: middle;
-  display: inline-block;
+
+.intro-website {
   z-index: 2;
+  transform: rotate(-10deg);
+
+  h2 {
+    font-family: mensurabold;
+    font-size: 1.5em;
+    color: $background-light;
+  }
+  h1 {
+    font-family: shaft-h1;
+    // color:#333;
+    color: $alpha;
+    font-size: 4.5em;
+    text-anchor: middle;
+    display: inline-block;
+    z-index: 2;
+  }
+  .logo {
+    filter: drop-shadow(14px 5px 7px rgba(0, 0, 0, 0.3));
+    z-index: 5;
+    transform: rotate(10deg);
+  }
+  @media screen and (min-width: 800px) {
+    h2 {
+      font-family: mensurabold;
+      font-size: 3em;
+    }
+    h1 {
+      font-family: shaft-h1;
+      // color:#333;
+      color: $alpha;
+      font-size: 5em;
+      text-anchor: middle;
+      display: inline-block;
+      z-index: 2;
+    }
+  }
 }
-.logo {
-  filter: drop-shadow(14px 5px 7px rgba(0, 0, 0, 0.3));
-  z-index: 5;
-}
+
 .pt {
   z-index: 2;
 }
 .container-fluid {
   // background-color: $beta;
   background-color: #253a5f;
-  overflow: hidden;
-  height: 100vh;
+  min-height: 100vh;
+  max-width: 100vw;
   background-size: cover;
   background-attachment: fixed;
 }
@@ -69,11 +107,8 @@ h1 {
   padding-top: 5%;
 }
 @media (max-width: 1100px) {
-  h1 {
-    font-size: 3em !important;
-  }
   .container-fluid {
-    height: 70vh !important;
+    height: 100vh !important;
   }
   .d-flex h1 {
     min-width: 100% !important;

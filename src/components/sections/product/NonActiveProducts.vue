@@ -4,20 +4,18 @@
         non-active-container
         d-flex
         h-100
-        flex-column
+        flex-row
         justify-content-center
     "
-    >
-    <div
-      class="justify-content-center justify-content-md-between d-flex flex-column"
-    >
+  >
+    <div class="justify-content-center justify-content-md-between d-flex flex-row">
       <product
-          v-for="(product, productIndex) in products"
-          v-bind="product"
-          :productIndex="productIndex"
-          :key="productIndex"
-          :class="{activing:products[productIndex].active}"
-          class="non-active-products animated FadeInUp"
+        v-for="(product, productIndex) in products"
+        v-bind="product"
+        :productIndex="productIndex"
+        :key="productIndex"
+        :class="{ activing: products[productIndex].active }"
+        class="non-active-products animated FadeInUp"
       />
     </div>
   </div>
@@ -36,45 +34,41 @@ export default {
 };
 </script>
 
-<style lang='scss' scoped>
-@media (max-width: 768px) {
-  .activing{
-    left: 0%!important;
-    width: 80px!important;
-    height: 80px!important;
-    }
-    ::before{
-      content: "";
-        height:0px!important;
-    }
-  .non-active-container{
-    top:0%!important;
-    // left: -10%!important;
-  .non-active-products{
-      position: static!important;
-      width: 25px!important;
-      height: 25px!important;
-      margin-bottom:.1em;
-    }
+<style lang="scss" scoped>
+.non-active-container {
+  z-index: 100;
+  // transform: rotate(-8deg);
+  margin-right: 3em;
+  transform-origin: top;
+
+  .non-active-products {
+    background-size: cover;
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+    margin: 0.5em;
+    transition: cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.2s;
+  }
+  .activing {
+    filter: drop-shadow(14px 5px 7px rgba(222, 255, 0, 0.3));
+    transform: translateY(-1em);
+    width: 85px;
+    height: 85px;
+    transition: cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.2s;
   }
 }
-.activing{
-  filter:drop-shadow(14px 5px 7px rgba(222, 255, 0, 0.3))!important;
-  width: 90px!important;
-  height: 90px!important;
-  transition:cubic-bezier(0.075, 0.82, 0.165, 1) .9s;
-}
 
-.non-active-container{
-  transform: rotate(-16deg);
-  margin-right:3em;
-  transform-origin: top;
-  .non-active-products{
-    transition:cubic-bezier(0.075, 0.82, 0.165, 1) .3s;
-    background-size: cover;
-    width: 50px;
-    height: 50px;
-    z-index: 0;
+@media (max-width: 768px) {
+  .non-active-container {
+    margin-top: 1em;
+    .non-active-products {
+      width: 30px;
+      height: 30px;
+    }
+    .activing {
+      width: 40px;
+      height: 40px;
+    }
   }
 }
 </style>
