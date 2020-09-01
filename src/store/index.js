@@ -63,7 +63,6 @@ export default new Vuex.Store({
           '../products/SH-581/coxmos/5.png',
           '../products/SH-581/coxmos/6.png',
           '../products/SH-581/coxmos/7.png',
-          '../products/SH-581/coxmos/8.png',
         ],
         index: 2,
       },
@@ -179,7 +178,10 @@ export default new Vuex.Store({
     },
     shaftCompanies: (state, getters) => {
       return getters.shaftPropertyCompanies.filter(
-        company => company.properties.shaft.value === 'true',
+        company =>
+          company.properties.shaft.value === 'true' &&
+          company.properties.fav &&
+          company.properties.fav.value !== 'true',
       );
     },
   },
@@ -187,6 +189,7 @@ export default new Vuex.Store({
     SET_ALL_COMPANIES(state, allCompanies) {
       state.allCompanies = allCompanies;
     },
+
     SET_ACTIVE_COMPANY(state, company) {
       state.activeCompany = company;
     },
@@ -218,9 +221,9 @@ export default new Vuex.Store({
     async fetchCompanies({ commit, state }) {
       console.log(axios);
       const allCompanies = await axios.get(`${urlBase}/companies`);
-      console.log(allCompanies);
       commit('SET_ALL_COMPANIES', allCompanies.data.data.companies);
     },
+
     async clickCounter(context, toUpdate, clicks) {
       console.log(toUpdate);
       if (clicks) {
@@ -245,29 +248,30 @@ export default new Vuex.Store({
         console.log(firstClickUpdate);
       }
     },
-    async nextProduct({ commit, state, getters }) {
+
+    nextProduct({ commit, state, getters }) {
+      commit('RESTART_COUNTER');
       const indexProduct = getters.activeProduct.index;
-      await commit('DEACTIVATE_PRODUCTS');
-      //  await state.products.forEach(product=>{
-      //       console.log(product)
-      //       product.active=false;
-      //   });
+      commit('DEACTIVATE_PRODUCTS');
+
       if (indexProduct + 1 <= state.products.length - 1) {
         commit('SET_ACTIVE_PRODUCT', indexProduct + 1);
       } else {
         commit('SET_ACTIVE_PRODUCT', 0);
       }
-      commit('RESTART_COUNTER');
     },
-    async lastProduct({ commit, state, getters }) {
+
+    lastProduct({ commit, state, getters }) {
+      commit('RESTART_COUNTER');
       const indexProduct = getters.activeProduct.index;
-      await commit('DEACTIVATE_PRODUCTS');
+
+      commit('DEACTIVATE_PRODUCTS');
+
       if (indexProduct - 1 >= 0) {
         commit('SET_ACTIVE_PRODUCT', indexProduct - 1);
       } else {
         commit('SET_ACTIVE_PRODUCT', state.products.length - 1);
       }
-      commit('RESTART_COUNTER');
     },
   },
 });
