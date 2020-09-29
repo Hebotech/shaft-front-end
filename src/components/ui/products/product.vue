@@ -1,6 +1,6 @@
 <template>
   <!-- v-for="(product, productIndex) in products"
-          :key="productIndex" -->
+  :key="productIndex"-->
   <div
     class="non-active-products animated FadeInRight"
     :class="{ activing: active }"
@@ -22,6 +22,7 @@ export default {
   methods: {
     async setActiveProduct(index) {
       await this.$store.commit('DEACTIVATE_PRODUCTS');
+      await this.$store.commit('RESTART_COUNTER');
       await this.$store.commit('SELECT_ACTIVE_PRODUCT', index);
       this.$ga.event('Productos', 'click', `${this.name}`);
     },

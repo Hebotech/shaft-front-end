@@ -1,9 +1,9 @@
 <template>
   <div
     class="container-fluid align-items-center d-flex flex-column justify-content-center"
-    :style="{ 'background-image': 'url(' + require('@/assets/bg-header.svg') + ')' }"
+    :style="[lazyLoad === true ? { 'background-image': 'url(' + require('@/assets/bg-header.svg') + ')' } : '']"
   >
-    <div class="intro-website align-self-center d-flex flex-column align-items-center ">
+    <div class="intro-website align-self-center d-flex flex-column align-items-center">
       <h2>Nueva colección</h2>
       <h1 class="animate__animated animate__zoomInDown">Descubrela ahora</h1>
       <img
@@ -22,6 +22,16 @@ import { mapGetters } from 'vuex';
 
 export default {
   name: 'HeroHeader',
+
+  created() {
+    this.lazyLoad = true;
+  },
+
+  data() {
+    return {
+      lazyLoad: false,
+    };
+  },
 
   computed: {
     ...mapGetters({
