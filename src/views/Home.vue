@@ -2,7 +2,8 @@
   <div class="home">
     <hero-header />
     <cta-button />
-    <product-experience />
+    <product-experience v-if="enterProducts" />
+
     <distribuidores />
   </div>
 </template>
@@ -16,6 +17,17 @@ export default {
     Distribuidores: () => import('@/components/sections/companies/distribuidores.vue'),
     CtaButton: () => import('@/components/ui/CtaButton.vue'),
   },
+
+  created() {
+    this.enterProducts = true;
+  },
+
+  data() {
+    return {
+      enterProducts: false,
+    };
+  },
+
   mounted() {
     window.addEventListener(
       'keydown',

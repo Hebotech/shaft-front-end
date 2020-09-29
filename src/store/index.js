@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 const axios = require('axios');
-const urlBase = 'https://backend-shaft.herokuapp.com';
+const urlBase = 'https://www.api.shaft.mx';
 
 Vue.use(Vuex);
 

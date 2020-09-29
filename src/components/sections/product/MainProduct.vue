@@ -11,6 +11,7 @@
         v-else
         :src="`${activeProduct.images[counter]}`"
         class="main-product"
+        loading="lazy"
       />
     </transition>
     <div class="circle" />
