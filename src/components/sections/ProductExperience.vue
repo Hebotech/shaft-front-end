@@ -1,13 +1,10 @@
 <template>
   <div
     class="d-flex flex-column justify-content-around justify-content-md-between container-fluid"
-    :style="{ 'background-image': `url(${activeProduct.color})` }"
   >
-    <!-- <div class="bg-svg"></div> -->
-
+      <svg-bg/>
     <h1 class="text-lg-left text-center helmet-title">{{ activeProduct.name }}</h1>
     <div class="productSection flex-column">
-      <!-- <product-titles class="pt" /> -->
       <product-circle />
       <product-description />
     </div>
@@ -20,13 +17,14 @@ import { productHelmetMixin } from '@/mixins/productHelmetsMixin';
 import ProductCircle from '@/components/sections/product/ProductCircle.vue';
 import ProductTitles from '@/components/sections/product/ProductTitles.vue';
 import ProductDescription from '@/components/sections/product/ProductDescription.vue';
+import SvgBg from '@/components/ui/products/SvgBg.vue';
 
 export default {
   name: 'ProductExperience',
   components: {
     ProductCircle,
-    // ProductTitles,
     ProductDescription,
+    SvgBg
   },
   mixins: [productHelmetMixin],
 };
@@ -39,32 +37,11 @@ h1 {
   color: $alpha;
   margin-bottom: -1.2em;
 }
-
-.bg-svg {
-  // overflow: hidden;
-  background-blend-mode: luminosity;
-  background-size: cover;
-  background-position: center center;
-  position: absolute;
-  left: 0;
-  top: 25%;
-
-  transform-origin: initial;
-  z-index: 0;
-
-  mask-image: url('~@/assets/bg-product.svg');
-  mask-size: contain;
-  transition: ease-in-out 0.3s;
-  min-width: 100%;
-  mask-position: center center;
-  mask-repeat: no-repeat;
-}
 .container-fluid {
   background-color: $navy-color;
   background-blend-mode: lighten;
   z-index: 20;
   background-size: cover;
-  z-index: 100;
   background-repeat: no-repeat;
   background-position: center center;
   transition: all ease-in-out 0.3s;
