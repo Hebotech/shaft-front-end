@@ -8,8 +8,15 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     allCompanies: [],
-    activeCompany: {},
-    activeProduct: {},
+
+    activeCompany: {
+      
+    },
+
+    activeProduct: {
+      
+    },
+    
     counter: 0,
     products: [
       {
@@ -118,38 +125,6 @@ export default new Vuex.Store({
         images: ['../products/SH-3700/tempo/1.png', '../products/SH-3700/tempo/2.png'],
         index: 5,
       },
-      // {
-      //   name: 'Nepto',
-      //   color: '../bgs/8.png',
-      //   description: 'Ésta es la súper descripción del 5',
-      //   active: false,
-      //   model: 'SH-589',
-      //   certificates: [
-      //     'https://shafthelmets.com/wp-content/uploads/2016/08/3-1-300x300.png',
-      //     'https://shafthelmets.com/wp-content/uploads/2016/08/3-2-300x300.png',
-      //     'https://shafthelmets.com/wp-content/uploads/2016/08/2-5-300x300.png',
-      //   ],
-      //   images: ['../products/SH-589/nepto/1.png'],
-      //   index: 6,
-      // },
-      // {
-      //   name: 'PILOT',
-      //   color: '../bgs/7.png',
-      //   description: 'Ésta es la súper descripción del 5',
-      //   active: false,
-      //   model: 'SH-225',
-      //   certificates: [
-      //     'https://shafthelmets.com/wp-content/uploads/2016/09/SAT-compressor.png',
-      //     'https://shafthelmets.com/wp-content/uploads/2016/08/3-1-300x300.png',
-      //     'https://shafthelmets.com/wp-content/uploads/2016/08/3-2-300x300.png',
-      //   ],
-      //   images: [
-      //     '../products/SH-225/1.png',
-      //     '../products/SH-225/2.png',
-      //     '../products/SH-225/3.png',
-      //   ],
-      //   index: 7,
-      // },
     ],
   },
   getters: {
@@ -193,17 +168,21 @@ export default new Vuex.Store({
     SET_ACTIVE_COMPANY(state, company) {
       state.activeCompany = company;
     },
+    
     SET_ACTIVE_PRODUCT(state, indexProduct) {
       state.products[indexProduct].active = true;
     },
+
     DEACTIVATE_PRODUCTS(state) {
       state.products.forEach(product => {
         product.active = false;
       });
     },
+
     SELECT_ACTIVE_PRODUCT(state, index) {
       state.products[index].active = true;
     },
+
     ADDING_COUNTER(state) {
       state.counter += 1;
     },

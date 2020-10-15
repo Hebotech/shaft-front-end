@@ -4,10 +4,6 @@
       <h2 class="text-center">Tiendas Oficiales</h2>
       <div class="row p-lg-5 m-0 justify-content-center">
         <div class="col-12 justify-content-center">
-          <!-- <div class="col-4 justify-content-center text-center">
-            <label for="state">Estado</label>
-            <select name="state" id="state"></select>
-          </div> -->
         </div>
         <div
           class="col-md-6 col-sm-6 col-12 m-0 company-for"

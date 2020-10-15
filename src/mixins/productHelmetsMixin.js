@@ -4,6 +4,7 @@ export const productHelmetMixin = {
     activeProduct() {
       return this.$store.getters.activeProduct;
     },
+    
     counter() {
       return this.$store.state.counter;
     },

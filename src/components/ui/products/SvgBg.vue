@@ -1,17 +1,34 @@
 <template>
   <div class="svg-bgg container p-0">
+    <div class="row m-0">
+      <div class="col-12">
     <keep-alive>
       <component
         ref="currentBackground"
-        :is="activeProduct"
+        :is="backgrounds[activeProduct.index]"
+        :key="activeProduct.index"
       />
     </keep-alive>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
+import  {productHelmetMixin}  from '@/mixins/productHelmetsMixin';
+
+import { gsap } from 'gsap';
+import MorphSVGPlugin from 'gsap/MorphSVG';
+gsap.registerPlugin(MorphSVGPlugin);
+
   export default {
     name: 'Svg-bg',
+
+    mixins: [productHelmetMixin],
+
+    activated(){
+      this.$refs.currentBackground
+    },
 
     components:{
 		SH211: () =>
@@ -68,14 +85,33 @@
 			import(
 				/* webpackChunkName: "SHPRO610SOLID" */ '@/components/SVG/SH-PRO-610-SOLID.vue'
 			),
+    },
+
+
+
+  data() {
+    return {
+      backgrounds: [
+        "SH211",
+		"SH227FLOW",
+		"SH502CAMO",
+		"SH502RUBBER",
+		"SH581PREDATOR",
+		"SH581LIBERTY",
+		"SH581PATRIOT",
+		"SH581SHINNER",
+		"SHPRO610ASTUTE",
+		"SHPRO610NEOTRADE",
+    "SHPRO610SOLID"
+      ]
     }
+  },
   }
 </script>
 
 <style lang="scss" scoped>
 .svg-bgg{
   z-index: 1;
-  background-color:red;
   position: absolute;
   left:0;
   min-height: 100%;
