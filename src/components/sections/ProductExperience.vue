@@ -45,7 +45,7 @@ h1 {
   background-repeat: no-repeat;
   background-position: center center;
   transition: all ease-in-out 0.3s;
-  padding-top: 3.5em;
+  //padding-top: 3.5em;
   overflow-x: hidden;
 }
 .productSection {
