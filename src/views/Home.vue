@@ -3,7 +3,6 @@
     <hero-header />
     <cta-button />
     <product-experience v-if="enterProducts" />
-
     <distribuidores />
   </div>
 </template>
