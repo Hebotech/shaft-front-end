@@ -1,73 +1,56 @@
 <template>
-  <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">
-        shaft-front-end
-      </h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
-    </div>
+  <div class="home" :class="$route.name === 'product-modal' ? 'blurIn' : ''">
+    <hero-header />
+    <cta-button />
+    <product-experience />
+    <transition
+      mode="out-in"
+      enter-active-class="animated animate__fadeIn animate__animated"
+      leave-active-class="animate__animated animated animate__fadeOut"
+    >
+      <router-view :key="$route.path" />
+    </transition>
+    <distribuidores />
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  name: 'Home',
+
+  components: {
+    HeroHeader: () => import('@/components/sections/HeroHeader.vue'),
+
+    ProductExperience: () =>
+      import('@/components/sections/ProductExperience.vue'),
+
+    Distribuidores: () =>
+      import('@/components/sections/companies/distribuidores.vue'),
+
+    CtaButton: () => import('@/components/ui/CtaButton.vue'),
+  },
+
+  created() {
+    this.$store.dispatch('fetchProducts', this.$route.params);
+  },
+
+  data() {
+    return {
+      enterProducts: false,
+    };
+  },
+};
 </script>
 
-<style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family:
-    'Quicksand',
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
+<style lang="scss">
+.home {
+  overflow-x: hidden;
+  transition: filter 0.5s ease-in;
+  &.blurIn {
+    & > *:not(.modal-product) {
+      transition: all 0.5s ease-out;
+      filter: blur(8px);
+    }
+  }
 }
 </style>
