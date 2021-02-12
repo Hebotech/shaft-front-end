@@ -1,21 +1,34 @@
 <template>
   <div
-    class=" p-5 d-flex flex-column justify-content-around justify-content-md-between container-fluid"
+    class="p-5 d-flex flex-column justify-content-around justify-content-md-between container-fluid"
     v-if="products"
   >
     <div class="productSection flex-column">
-      <h1 class="text-lg-right text-center helmet-title">{{ activeProduct.name }}</h1>
-      <div class="bolsa-pro d-flex flex-column text-left" v-if="activeProduct.bolsa">
-        <h5>
-          ¡ Incluye de regalo !
-        </h5>
-        <img src="/products/bolsapro/abierta.png" alt="Bolsa cubrecasco Shaft" class="img-fluid" />
-        <img src="/products/bolsapro/cerrada.png" alt="Bolsa cubrecasco Shaft" class="img-fluid" />
+      <h1 class="text-lg-right text-center helmet-title">
+        {{ activeProduct.name }}
+      </h1>
+      <div
+        class="bolsa-pro d-flex flex-column text-left"
+        v-if="activeProduct.bolsa"
+      >
+        <h5>¡ Incluye de regalo !</h5>
+        <img
+          src="/products/bolsapro/abierta.png"
+          alt="Bolsa cubrecasco Shaft"
+          class="img-fluid"
+        />
+        <img
+          src="/products/bolsapro/cerrada.png"
+          alt="Bolsa cubrecasco Shaft"
+          class="img-fluid"
+        />
       </div>
       <product-circle />
       <product-description />
     </div>
-    <svg-bg />
+    <client-only>
+      <svg-bg />
+    </client-only>
   </div>
   <div class="container-fluid align-items-center justify-content-center" v-else>
     <div class="spinner-grow text-warning" role="status">

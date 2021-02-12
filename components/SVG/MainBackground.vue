@@ -1,5 +1,6 @@
 <template>
   <svg
+    no-ssr
     class="logo-svg"
     width="100%"
     height="100%"
@@ -13,12 +14,14 @@
       fill="#DDF64C"
     />
     <keep-alive>
-      <component
-        class="svg-to-animate"
-        ref="currentBackground"
-        :is="backgrounds[activeProduct.index]"
-        @rendered="animatePath"
-      />
+      <client-only placeholder="helow">
+        <component
+          class="svg-to-animate"
+          ref="currentBackground"
+          :is="backgrounds[activeProduct.index]"
+          @rendered="animatePath"
+        />
+      </client-only>
     </keep-alive>
   </svg>
 </template>
@@ -26,39 +29,42 @@
 <script>
 import { productHelmetMixin } from '@/mixins/productHelmetsMixin';
 
-// import { gsap } from 'gsap';
-// import { MorphSVGPlugin } from 'gsap/dist/MorphSVGPlugin';
-// gsap.registerPlugin(MorphSVGPlugin);
+import { gsap } from 'gsap';
+//import MorphSVGPlugin from 'gsap/MorphSVG.js';
 
 export default {
   name: 'MainBackground',
   mixins: [productHelmetMixin],
 
+  created() {
+    //gsap.registerPlugin(MorphSVGPlugin);
+  },
+
   methods: {
     animatePath() {
-      // let tl = new gsap.timeline();
-      // tl.to(
-      //   '#background-0',
-      //   {
-      //     morphSVG: `.svg-to-animate .animate-svg`,
-      //     ease: 'power2',
-      //     duration: 0.9,
-      //   },
-      //   '0'
-      // ).fromTo(
-      //   '.svg-to-animate',
-      //   {
-      //     opacity: 0,
-      //     translateY: 10,
-      //   },
-      //   {
-      //     rotation: 0,
-      //     translateY: 0,
-      //     opacity: 1,
-      //     ease: 'ease-in-out',
-      //     duration: 0.5,
-      //   }
-      // );
+      let tl = new gsap.timeline();
+      tl.to(
+        '#background-0',
+        {
+          morphSVG: `.svg-to-animate .animate-svg`,
+          ease: 'power2',
+          duration: 0.9,
+        },
+        '0'
+      ).fromTo(
+        '.svg-to-animate',
+        {
+          opacity: 0,
+          translateY: 10,
+        },
+        {
+          rotation: 0,
+          translateY: 0,
+          opacity: 1,
+          ease: 'ease-in-out',
+          duration: 0.5,
+        }
+      );
     },
   },
 
