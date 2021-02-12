@@ -4,7 +4,8 @@ node_modules
 _products(v1)
 _products(v2)
 
-
+shaft-front-end
+/shaft-front-end
 # local env files
 .env.local
 .env.*.local
