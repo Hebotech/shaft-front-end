@@ -23,6 +23,7 @@
     "gsap": "^3.5.1",
     "jest": "^26.0.1",
     "jest-vue-preprocessor": "^1.7.1",
+    "mapbox-gl": "^0.53.1",
     "nuxt": "^2.14.12",
     "typescript": "^3.9.5",
     "vue": "^2.6.11",

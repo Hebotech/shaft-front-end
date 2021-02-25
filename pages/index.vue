@@ -3,13 +3,7 @@
     <hero-header />
     <cta-button />
     <product-experience />
-    <transition
-      mode="out-in"
-      enter-active-class="animated animate__fadeIn animate__animated"
-      leave-active-class="animate__animated animated animate__fadeOut"
-    >
-      <router-view :key="$route.path" />
-    </transition>
+
     <distribuidores />
   </div>
 </template>

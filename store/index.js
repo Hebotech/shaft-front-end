@@ -2,7 +2,7 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 
 import axios from 'axios';
-const urlBase = 'https://www.api.shaft.mx';
+const urlBase = 'http://localhost:9000/shaft';
 
 export const state = () => ({
   allCompanies: [],
@@ -12,6 +12,8 @@ export const state = () => ({
   activeProduct: {},
 
   counter: 0,
+
+  mapMarkers: [],
 
   products: null,
 });
@@ -104,6 +106,10 @@ export const mutations = {
   IMAGES_LENGTH(state, length) {
     state.counter = length;
   },
+
+  SET_MAP_MARKERS(state, markersArray, index) {
+    state.mapMarkers.push(markersArray);
+  },
 };
 export const actions = {
   async fetchProducts({ commit, state }, helmet) {
@@ -150,9 +156,54 @@ export const actions = {
     commit('SET_FETCHED_PRODUCTS', products);
   },
 
-  async fetchCompanies({ commit, state }) {
+  async fetchCompanies({ commit, state, dispatch }) {
     const allCompanies = await axios.get(`${urlBase}/companies`);
     commit('SET_ALL_COMPANIES', allCompanies.data.data.companies);
+    dispatch('setMapMarkets');
+  },
+
+  async setMapMarkets({ commit, state }) {
+    const coordinates = await state.allCompanies
+      .filter((c) => c.properties.address && c.properties.address.value !== '')
+      .flatMap(async ({ properties: company }, index) => {
+        let coordinatesArray = await company.address.value
+          .split(',')
+          .map(async (address) => {
+            const params = {
+              access_key: 'b071e0c0614ca392cde10f38e3bf51f2',
+              query: address,
+              country: 'mx',
+              limit: 1,
+              fields: ['results.longitude', 'results.latitude'],
+            };
+            let {
+              data: { data: response },
+            } = await axios.get('http://api.positionstack.com/v1/forward', {
+              params,
+            });
+
+            let coordinates = response[0]
+              ? [response[0].longitude, response[0].latitude]
+              : null;
+
+            let finalObject = {
+              name: company.name.value,
+              website: company.website ? company.website.value : null,
+              description: company.description
+                ? company.description.value
+                : null,
+              fav: company.fav ? company.fav.value : false,
+              coordinates,
+            };
+
+            if (coordinates && coordinates[0])
+              commit('SET_MAP_MARKERS', finalObject);
+
+            return finalObject;
+          });
+        return coordinatesArray;
+      });
+    return coordinates;
   },
 
   async findAndActivateProduct(

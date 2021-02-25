@@ -1,41 +1,47 @@
 <template>
   <div class="distribuidores">
     <h2 class="text-center">Tiendas Oficiales</h2>
-    <div class="row p-lg-5 m-0 justify-content-center">
-      <div class="col-12 justify-content-center"></div>
-      <div
-        class="col-md-6 col-sm-6 col-12 m-0 company-for"
-        v-for="(favCompany, favCompanyIndex) in favCompanies"
-        :key="favCompany.companyId"
+    <no-ssr>
+      <MglMap
+        :center.sync="center"
+        :accessToken="accessToken"
+        :mapStyle="mapStyle"
       >
-        <websites
-          :id="`company-website-${favCompanyIndex}`"
-          class="main-company"
-          :isFav="true"
-          :company="favCompany"
-        />
-      </div>
-    </div>
-    <div class="row m-0" id="regular-company-row">
-      <div
-        class="col-md-4 col-sm-5 col-12 text-align-center company-regular"
-        v-for="regularCompany in shaftCompanies"
-        :key="regularCompany.companyId"
-      >
-        <websites :company="regularCompany" />
-      </div>
-    </div>
+        <MglGeolocateControl position="top-right" />
+
+        <MglMarker
+          v-for="marker in mapMarkers"
+          :key="marker.coordinates[0]"
+          :coordinates="marker.coordinates"
+          color="#DDFF00"
+        >
+          <MglPopup>
+            <map-popup v-bind="marker" />
+          </MglPopup>
+          <div slot="marker">
+            <map-marker :fav="marker.fav" />
+          </div>
+        </MglMarker>
+      </MglMap>
+    </no-ssr>
   </div>
 </template>
 
 <script>
-import websites from '@/components/ui/companies/websites.vue';
+import { mapGetters, mapState } from 'vuex';
+import MapMarker from '@/components/ui/companies/MapMarker';
+import MapPopup from '@/components/ui/companies/MapPopup';
 
 export default {
   name: 'distribuidoress',
 
+  mounted() {
+    this.$store.dispatch('fetchCompanies');
+  },
+
   components: {
-    websites,
+    MapPopup,
+    MapMarker,
   },
 
   computed: {
@@ -52,74 +58,39 @@ export default {
   },
 
   methods: {
-    async enter() {
-      this.mountComponents();
-    },
-
-    async mountComponents() {
-      if (!this.entered) {
-        await this.$store.dispatch('fetchCompanies');
-        this.favCompanies = this.$store.getters.favCompanies;
-        this.shaftCompanies = this.$store.getters.shaftCompanies;
-        this.scrollAnimation();
-        this.entered = true;
-      }
-    },
-
-    scrollAnimation() {
-      //   const tl = gsap.timeline({
-      //     scrollTrigger: {
-      //       trigger: '#distribuidores',
-      //       start: '10% bottom',
-      //       end: '9% top',
-      //       scrub: true,
-      //     },
-      //   });
-      //   tl.addLabel('Start').from('#distribuidores .company-for', {
-      //     duration: 3,
-      //     opacity: 0.7,
-      //     transform: 'translateY(3.5em)',
-      //     scale: 0.9,
-      //     filter: 'grayscale(100%)',
-      //     ease: 'power2.in',
-      //     stagger: {
-      //       each: 0.5,
-      //       from: 'top',
-      //     },
-      //   });
-      //   const tl2 = gsap.timeline({
-      //     scrollTrigger: {
-      //       trigger: '#regular-company-row',
-      //       start: '5% bottom',
-      //       end: 'bottom bottom',
-      //       scrub: true,
-      //     },
-      //   });
-      //   tl2.addLabel('regular-company').from('#distribuidores .company-regular', {
-      //     duration: 2,
-      //     opacity: 0.7,
-      //     scale: 0.9,
-      //     ease: 'ease-in',
-      //     stagger: {
-      //       each: 1,
-      //       from: 'top',
-      //     },
-      //   });
+    handleClick(object) {
+      console.log(object);
     },
   },
 
   data() {
     return {
-      favCompanies: [],
-      shaftCompanies: [],
-      entered: false,
+      accessToken:
+        'pk.eyJ1IjoiaXJ2aW5nLWhlYm8iLCJhIjoiY2tlYzlibHNrMDIybjJ0cDloOGM1Y3Q1OSJ9.2fBGzUh_npTwBo4hoFPBXg',
+      mapStyle: 'mapbox://styles/irving-hebo/ckec9srml09u719nzjjvbxaj5',
+      center: [-100.81745253937476, 21.104965587432403],
+      geojson: {},
+      layerId: 'firstLayer',
+      sourceId: 'firstSource',
+      markerCoordinates: [19.4978, -99.1269],
     };
+  },
+
+  computed: {
+    ...mapGetters(['favCompanies', 'shaftCompanies']),
+    ...mapState({
+      mapMarkers: (state) => state.mapMarkers,
+    }),
   },
 };
 </script>
 
 <style lang="scss" scoped>
+pre {
+  color: $alpha;
+}
 .distribuidores {
+  min-height: 100vh;
   background-color: $navy-color;
   padding-top: 3em;
   h2 {
@@ -134,5 +105,13 @@ export default {
     position: relative;
     z-index: 3;
   }
+}
+h5 {
+  color: $navy-color;
+  font-family: shaft-h1;
+}
+
+.mgl-map-wrapper {
+  min-height: 100vh;
 }
 </style>
