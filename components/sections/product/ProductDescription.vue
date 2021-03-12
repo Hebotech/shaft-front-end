@@ -1,30 +1,8 @@
 <template>
   <div
-    class="description order-3 order-sm-3 order-md-1 col-md-4 col-12 text-md-left align-self-end align-self-md-start"
+    class="description order-3 order-sm-3 order-md-3 col-md-4 col-12 text-center"
   >
-    <h3>{{ activeProduct.model }}</h3>
-    <div class="arrows-container justify-content-around justify-content-md-start">
-      <!-- <div class="arrowContainer d-md-none" @click="nextProduct">
-        <fontawesome class="animated fadeInRight fa fa-arrow-down" />
-      </div>
-      <div class="arrowContainer" @click="lastImage">
-        <fontawesome class="animated fadeInLeft mr-md-3 fa fa-arrow-left" />
-      </div>
-      <div class="arrowContainer" @click="nextImage">
-        <fontawesome class="animated fadeInRight ml-md-3 fa fa-arrow-right" />
-      </div>
-      <div class="arrowContainer d-md-none" @click="lastProduct">
-        <fontawesome class="animated fadeInRight fa fa-arrow-up" />
-      </div> -->
-      <button class="ctaa" @click="$router.push({
-      name: 'product-modal',
-      params: {
-        model: activeProduct.model,
-        graphic: activeProduct.name
-      }})">
-        Ver detalles
-      </button>
-    </div>
+    <h3>Nueva colección</h3>
   </div>
 </template>
 
@@ -47,14 +25,13 @@ export default {
 h3 {
   @extend .h4-font;
   font-size: 4em;
-  
 }
 .arrows-container {
-  button.ctaa{
+  button.ctaa {
     background-color: white;
-    color:$navy-color;
+    color: $navy-color;
     padding: 0 1em;
-    border:none;
+    border: none;
     border-radius: 18px;
     font-size: 70%;
   }
@@ -73,11 +50,9 @@ h3 {
   justify-content: center;
 }
 
-
-
 @media (max-width: 768px) {
-  .description{
-  margin-bottom: 5em;
+  .description {
+    margin-bottom: 5em;
   }
   * {
     color: #e9e2e2;

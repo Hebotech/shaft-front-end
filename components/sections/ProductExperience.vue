@@ -3,32 +3,10 @@
     class="p-5 d-flex flex-column justify-content-around justify-content-md-between container-fluid"
     v-if="products"
   >
+    <product-circle />
     <div class="productSection flex-column">
-      <h1 class="text-lg-right text-center helmet-title">
-        {{ activeProduct.name }}
-      </h1>
-      <div
-        class="bolsa-pro d-flex flex-column text-left"
-        v-if="activeProduct.bolsa"
-      >
-        <h5>¡ Incluye de regalo !</h5>
-        <img
-          src="/products/bolsapro/abierta.png"
-          alt="Bolsa cubrecasco Shaft"
-          class="img-fluid"
-        />
-        <img
-          src="/products/bolsapro/cerrada.png"
-          alt="Bolsa cubrecasco Shaft"
-          class="img-fluid"
-        />
-      </div>
-      <product-circle />
-      <product-description />
+      <h1 class="text-center helmet-title">Nueva coleccion</h1>
     </div>
-    <client-only>
-      <svg-bg />
-    </client-only>
   </div>
   <div class="container-fluid align-items-center justify-content-center" v-else>
     <div class="spinner-grow text-warning" role="status">
@@ -42,15 +20,11 @@ import { productHelmetMixin } from '@/mixins/productHelmetsMixin';
 
 import ProductCircle from '@/components/sections/product/ProductCircle.vue';
 import ProductTitles from '@/components/sections/product/ProductTitles.vue';
-import ProductDescription from '@/components/sections/product/ProductDescription.vue';
-import SvgBg from '@/components/ui/products/SvgBg.vue';
 
 export default {
   name: 'ProductExperience',
   components: {
     ProductCircle,
-    ProductDescription,
-    SvgBg,
   },
 
   mixins: [productHelmetMixin],
@@ -97,7 +71,6 @@ h1 {
   @extend .title;
   font-size: 6em;
   color: $alpha;
-  margin-bottom: -1.2em;
 }
 
 .container-fluid {

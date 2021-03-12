@@ -6,6 +6,7 @@
         :center.sync="center"
         :accessToken="accessToken"
         :mapStyle="mapStyle"
+        :zoom="5"
       >
         <MglGeolocateControl position="top-right" />
 
@@ -14,13 +15,14 @@
           :key="marker.coordinates[0]"
           :coordinates="marker.coordinates"
           color="#DDFF00"
+          class="w-25"
         >
-          <MglPopup>
-            <map-popup v-bind="marker" />
-          </MglPopup>
           <div slot="marker">
             <map-marker :fav="marker.fav" />
           </div>
+          <MglPopup style="max-width: 25rem" class="w-25">
+            <map-popup v-bind="marker" />
+          </MglPopup>
         </MglMarker>
       </MglMap>
     </no-ssr>
@@ -68,7 +70,7 @@ export default {
       accessToken:
         'pk.eyJ1IjoiaXJ2aW5nLWhlYm8iLCJhIjoiY2tlYzlibHNrMDIybjJ0cDloOGM1Y3Q1OSJ9.2fBGzUh_npTwBo4hoFPBXg',
       mapStyle: 'mapbox://styles/irving-hebo/ckec9srml09u719nzjjvbxaj5',
-      center: [-100.81745253937476, 21.104965587432403],
+      center: [-102.2411842, 22.7787241],
       geojson: {},
       layerId: 'firstLayer',
       sourceId: 'firstSource',
@@ -90,7 +92,9 @@ pre {
   color: $alpha;
 }
 .distribuidores {
-  min-height: 100vh;
+  min-height: 50vh;
+  max-height: 70vh;
+  z-index: 100;
   background-color: $navy-color;
   padding-top: 3em;
   h2 {

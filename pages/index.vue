@@ -1,5 +1,8 @@
 <template>
-  <div class="home" :class="$route.name === 'product-modal' ? 'blurIn' : ''">
+  <div
+    class="home position-relative"
+    :class="$route.name === 'product-modal' ? 'blurIn' : ''"
+  >
     <hero-header />
     <cta-button />
     <product-experience />

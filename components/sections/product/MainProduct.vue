@@ -1,20 +1,24 @@
 <template>
   <div>
-    <transition
-      mode="out-in"
-      enter-active-class="animated animate__backInRight animate__animated"
-      leave-active-class="animate__animated animated animate__backOutLeft"
-    >
-      <slot v-if="!activeProduct"/>
-      <img
-        :alt="`shaft mexico casco ${activeProduct.name}`"
-        v-else
-        :src="`${activeProduct.images[counter]}`"
-        class="main-product"
-        loading="lazy"
-      />
-    </transition>
-    <div class="circle"/>
+    <client-only>
+      <swiper :slides-per-view="3" :space-between="50">
+        <swiper-slide>
+          <img
+            v-if="activeProduct"
+            :src="`${activeProduct.images[counter]}`"
+            class="main-product"
+            loading="lazy"
+        /></swiper-slide>
+        <swiper-slide>
+          <img
+            v-if="activeProduct"
+            :src="`${activeProduct.images[counter]}`"
+            class="main-product"
+            loading="lazy"
+        /></swiper-slide>
+        <swiper-slide>Slide 3</swiper-slide>
+      </swiper>
+    </client-only>
   </div>
 </template>
 
@@ -23,6 +27,7 @@ import { productHelmetMixin } from '@/mixins/productHelmetsMixin';
 
 export default {
   name: 'MainProduct',
+
   mixins: [productHelmetMixin],
 };
 </script>
@@ -34,8 +39,8 @@ export default {
   background-size: cover;
   align-content: center;
   background-attachment: scroll;
-  height: 450px;
-  width: 450px;
+  height: 100%;
+  width: 35rem;
   filter: drop-shadow(4px 9.69px 20px rgba(0, 0, 0, 0.452));
 }
 @media (max-width: 576px) {
@@ -52,14 +57,13 @@ export default {
     align-self: center;
     padding: 35%;
   }
-  
+
   img {
     max-width: 40%;
   }
 }
 @media (max-width: 768px) {
   .main-product {
-
     width: 350px;
   }
   img {

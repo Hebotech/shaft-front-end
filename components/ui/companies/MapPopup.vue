@@ -1,24 +1,29 @@
 <template>
-  <div class="col-6 border-0 animated zoomIn faster is-fav">
-    <div class="card-body">
-      <h5 class="card-title animated fadeInUp slower">
-        {{ name }}
-      </h5>
-      <p class="card-text animated fadeIn faster delay-1s">
-        {{ website }}
-      </p>
-      <p class="card-text animated fadeIn faster delay-1s">
-        {{ description }}
-      </p>
-      <a
-        v-if="website"
-        rel="noopener"
-        :href="`http://${website}`"
-        class="btn border-0 animated fadeInDown slower"
-        target="_blank"
-      >
-        Ver sitio web
-      </a>
+  <div class="row m-0 text-center">
+    <div class="col-12 border-0 animated zoomIn faster is-fav">
+      <div class="card-body">
+        <h5 class="card-title animated fadeInUp slower">
+          {{ name }}
+        </h5>
+        <p class="card-text animated fadeIn faster delay-1s">
+          {{ website }}
+        </p>
+        <p class="card-text animated fadeIn faster delay-1s">
+          {{ description }}
+        </p>
+        <p class="card-text animated fadeIn faster delay-1s">
+          <strong> Dirección: {{ address }} </strong>
+        </p>
+        <a
+          v-if="website"
+          rel="noopener"
+          :href="`http://${website}`"
+          class="btn border-0 animated fadeInDown slower"
+          target="_blank"
+        >
+          Ver sitio web
+        </a>
+      </div>
     </div>
   </div>
 </template>
@@ -38,18 +43,23 @@ export default {
     description: {
       type: String,
     },
+    address: {
+      type: String,
+    },
   },
 };
 </script>
 
 <style lang="scss" scoped>
-.card {
-  position: relative;
-  z-index: 2;
-}
 p {
   font-family: MensuraLight;
   font-weight: 100;
+  word-break: normal;
+  max-width: 22rem;
+  strong {
+    font-weight: 900;
+    color: $navy-color;
+  }
 }
 
 .btn:hover {

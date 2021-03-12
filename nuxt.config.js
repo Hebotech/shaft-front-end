@@ -54,6 +54,8 @@ export default {
   plugins: [
     './plugins/GA.js',
     { src: './plugins/MapBoxVue.js', mode: 'client' },
+    { src: './plugins/Swiper.js', mode: 'client' },
+    './plugins/Vuesax.js',
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -92,6 +94,6 @@ export default {
   // Build Configuration: https://go.nuxtjs.dev/config-build
 
   build: {
-    transpile: ['gsap', 'vue-mapbox'],
+    transpile: ['gsap', 'vue-mapbox', 'swiper'],
   },
 };

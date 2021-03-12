@@ -1,28 +1,11 @@
 <template>
   <div
-    class="
-  bg-circle
-  col-md-12
-  col-12
-  mb-3
-  mt-5
-  d-flex
-  justify-content-center
-  flex-column
-  align-items-center
-  order-2
-  order-lg-2
-"
+    class="bg-circle row mb-3 mt-5 d-flex justify-content-between align-items-center order-0 order-lg-2 d-flex"
   >
-    <main-product @click.native="$router.push({
-      name: 'product-modal',
-      params: {
-        model: activeProduct.model,
-        graphic: activeProduct.name
-      }
-    })" :counter="counter" />
-    <div class="products-around" >
-      <non-active-products />
+    <non-active-products />
+
+    <div class="col-8 justify-content-center">
+      <main-product :counter="counter" />
     </div>
   </div>
 </template>
@@ -40,7 +23,7 @@ export default {
   },
   mixins: [productHelmetMixin],
   mounted() {
-    window.addEventListener('keyup', event => {
+    window.addEventListener('keyup', (event) => {
       switch (event.keyCode) {
         case 37:
           this.lastImage();

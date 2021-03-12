@@ -2,7 +2,7 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 
 import axios from 'axios';
-const urlBase = 'http://localhost:9000/shaft';
+const urlBase = 'https://apihebo.online/shaft';
 
 export const state = () => ({
   allCompanies: [],
@@ -119,7 +119,10 @@ export const actions = {
     console.log(allProducts);
 
     let products = allProducts.map(
-      ({ images: imagesArray, meta_data }, index) => {
+      (
+        { images: imagesArray, meta_data, description, short_description },
+        index
+      ) => {
         let images = imagesArray.map((image) => image.src);
 
         let certificates = meta_data
@@ -144,6 +147,8 @@ export const actions = {
           name,
           active: isActive(),
           index,
+          description,
+          short_description,
           images,
           certificates,
           model,
@@ -193,6 +198,7 @@ export const actions = {
                 ? company.description.value
                 : null,
               fav: company.fav ? company.fav.value : false,
+              address: address,
               coordinates,
             };
 
