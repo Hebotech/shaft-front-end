@@ -183,7 +183,7 @@ export const actions = {
             };
             let {
               data: { data: response },
-            } = await axios.get('http://api.positionstack.com/v1/forward', {
+            } = await axios.get('https://api.positionstack.com/v1/forward', {
               params,
             });
 
