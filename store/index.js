@@ -174,22 +174,11 @@ export const actions = {
         let coordinatesArray = await company.address.value
           .split(',')
           .map(async (address) => {
-            const params = {
-              access_key: 'b071e0c0614ca392cde10f38e3bf51f2',
-              query: address,
-              country: 'mx',
-              limit: 1,
-              fields: ['results.longitude', 'results.latitude'],
-            };
             let {
-              data: { data: response },
-            } = await axios.get('https://api.positionstack.com/v1/forward', {
-              params,
+              data: { coordinates },
+            } = await axios.post('https://apihebo.online/locations', {
+              address: address || '',
             });
-
-            let coordinates = response[0]
-              ? [response[0].longitude, response[0].latitude]
-              : null;
 
             let finalObject = {
               name: company.name.value,
@@ -212,7 +201,7 @@ export const actions = {
     return coordinates;
   },
 
-  async findAndActivateProduct(
+  findAndActivateProduct(
     { state, commit, dispatch },
     { model, graphic: name }
   ) {

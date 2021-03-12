@@ -3,7 +3,6 @@
     class="p-5 d-flex flex-column justify-content-around justify-content-md-between container-fluid"
     v-if="products"
   >
-    <product-circle />
     <div class="productSection flex-column">
       <h1 class="text-center helmet-title">Nueva coleccion</h1>
     </div>
