@@ -3,7 +3,7 @@
   <main class="distribuidor">
     <div
       class="typeform-widget animate__fadeInDown animate__animated"
-      data-url="https://form.typeform.com/to/wXtpWP"
+      data-url="https://form.typeform.com/to/zRvU6x86"
       data-transparency="100"
       style="width: 100%; height: 500px;"
     ></div>

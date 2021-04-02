@@ -9,14 +9,10 @@ export default new Vuex.Store({
   state: {
     allCompanies: [],
 
-    activeCompany: {
-      
-    },
+    activeCompany: {},
 
-    activeProduct: {
-      
-    },
-    
+    activeProduct: {},
+
     counter: 0,
     products: [
       {
@@ -146,6 +142,7 @@ export default new Vuex.Store({
         company => company.properties.fav.value === 'true',
       );
     },
+
     shaftPropertyCompanies: state => {
       return state.allCompanies.filter(
         company => company.properties.shaft !== undefined && company.properties.name !== undefined,
@@ -168,7 +165,7 @@ export default new Vuex.Store({
     SET_ACTIVE_COMPANY(state, company) {
       state.activeCompany = company;
     },
-    
+
     SET_ACTIVE_PRODUCT(state, indexProduct) {
       state.products[indexProduct].active = true;
     },
